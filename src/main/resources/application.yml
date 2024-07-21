@@ -1,0 +1,52 @@
+spring:
+
+  # 连接MySQL
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/yatian?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: jk18889903808
+
+  # Spring Mail 邮箱相关配置
+  mail:
+    host: smtp.qq.com
+    port: 465
+    username: 2083717185@qq.com
+    password: udkxrbsqvmgwdifg
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+    default-encoding: x-utf-16le-bom
+
+
+# JWT
+token:
+  # JWT私钥
+  privateKey: 'fdasfgdsagaxgsregdfdjyghjfhebfdgwe45ygrfbsdfshfdsag'
+  # token生成时间超过yangToken变oldToken 访问刷新 (后期为了用户被盗号后必须更新token可能会废用
+  yangToken: 10000000
+  # token过期时长 一秒=1000
+  oldToken: 43200000
+
+community:
+  path:
+    # 开发用
+    domain: http://localhost:8080
+    # upload: J:/javaProject/data/upload
+
+# Mybatis
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.joking.yatian.entity
+  configuration:
+    use-generated-keys: true
+    map-underscore-to-camel-case: true
+
+# ServerProperties
+server:
+  port: 8080
+  servlet:
+    context-path:
