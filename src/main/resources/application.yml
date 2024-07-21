@@ -34,7 +34,8 @@ token:
 community:
   path:
     # 开发用
-    domain: http://localhost:8080
+    domain_springboot: http://localhost:8080
+    domain_vue: http://localhost:5173
     # upload: J:/javaProject/data/upload
 
 # Mybatis

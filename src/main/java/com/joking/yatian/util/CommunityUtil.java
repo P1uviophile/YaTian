@@ -28,14 +28,12 @@ public class CommunityUtil {
         return DigestUtils.md5DigestAsHex(key.getBytes());
     }
 
-    public static String getJSONString( Map<String, Object> map) {
-        JSONObject json = new JSONObject();
+    public static void addJSONString(JSONObject json, Map<String, Object> map) {
         if (map != null) {
             for (String key : map.keySet()) {
                 json.put(key, map.get(key));
             }
         }
-        return json.toJSONString();
     }
 
     public static String getJSONString( String key,String str) {
@@ -60,9 +58,6 @@ public class CommunityUtil {
         return getJSONString(code, msg, null);
     }
 
-    public static JSONObject getJSONString(int code) {
-        return getJSONString(code, null, null);
-    }
 
     public static void main(String[] args) {
         Map<String, Object> map = new HashMap<>();
@@ -70,5 +65,4 @@ public class CommunityUtil {
         map.put("age", 25);
         System.out.println(getJSONString(0, "ok", map));
     }
-
 }

@@ -16,7 +16,6 @@ import java.util.Map;
 public interface UserService {
 
     /**
-     * TODO
      * @date 2024/7/18
      * @methodName findUserById
      * 根据用户id查询用户信息
@@ -29,7 +28,6 @@ public interface UserService {
     public User findUserById(int id);
 
     /**
-     * TODO
      * @date 2024/7/18
      * @methodName getAuthorities
      * @param userId 用户id
@@ -41,7 +39,6 @@ public interface UserService {
     public Collection<? extends GrantedAuthority> getAuthorities(int userId);
 
     /**
-     * TODO
      * @date 2024/7/18
      * @methodName register
      * 用户注册业务
@@ -54,7 +51,6 @@ public interface UserService {
     public Map<String, Object> register(User user);
 
     /**
-     * TODO
      * @date 2024/7/18
      * @methodName activation
      * 激活状态判断
@@ -68,7 +64,6 @@ public interface UserService {
     public int activation(int userId, String code);
 
     /**
-     * TODO
      * @date 2024/7/19
      * @methodName findUserByName
      * 根据用户名查询用户
@@ -79,5 +74,17 @@ public interface UserService {
      *
      **/
     public User findUserByName(String username);
+
+    /**
+     * @date 2024/7/21
+     * @methodName checkPassword
+     * @param user 用户
+     * @param password 输入的密码
+     * @return boolean
+     * @author Joing7
+     * @throws
+     *
+     **/
+    public boolean checkPassword(User user,String password);
 
 }

@@ -11,9 +11,15 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
+import org.thymeleaf.TemplateEngine;
+import org.thymeleaf.context.Context;
 
+import javax.mail.MessagingException;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -28,19 +34,21 @@ public class UserServiceImpl implements UserService, CommunityConstant {
     private UserMapper userMapper;
 
     @Autowired
-    private MailClient mailClient;
-
-    @Autowired
     private RedisTemplate redisTemplate;
 
-    @Value("${community.path.domain}")
+    @Value("${community.path.domain_vue}")
     private String domain;
 
     @Value("${server.servlet.context-path}")
     private String contextPath;
 
+    @Value("${spring.mail.username}")
+    private String sendMailer;
+
+    @Autowired
+    private JavaMailSenderImpl javaMailSender;
+
     /**
-     * TODO
      * @date 2024/7/18
      * @methodName findUserById
      * 根据用户id查询用户信息
@@ -59,7 +67,6 @@ public class UserServiceImpl implements UserService, CommunityConstant {
     }
 
     /**
-     * TODO
      * @date 2024/7/18
      * @methodName getCache
      * 从缓存中取用户值
@@ -75,7 +82,6 @@ public class UserServiceImpl implements UserService, CommunityConstant {
     }
 
     /**
-     * TODO
      * @date 2024/7/18
      * @methodName initCache
      * 从数据库中查取用户数据，再存入缓存(初始化缓存)
@@ -94,7 +100,6 @@ public class UserServiceImpl implements UserService, CommunityConstant {
     }
 
     /**
-     * TODO
      * @date 2024/7/18
      * @methodName clearCache
      * 更新用户信息，清除缓存数据
@@ -110,7 +115,6 @@ public class UserServiceImpl implements UserService, CommunityConstant {
     }
 
     /**
-     * TODO
      * @date 2024/7/18
      * @methodName getAuthorities
      * 根据用户id查询用户权限
@@ -143,10 +147,9 @@ public class UserServiceImpl implements UserService, CommunityConstant {
     }
 
     /**
-     * TODO
      * @date 2024/7/18
      * @methodName register
-     * 用户注册业务
+     * 用户注册业务 先在数据库创建用户数据 激活状态置0 发送激活邮件给用户邮箱
      * @param user
      * @return java.util.Map<java.lang.String,java.lang.Object>
      * @author Joing7
@@ -189,19 +192,42 @@ public class UserServiceImpl implements UserService, CommunityConstant {
         // 注册用户
         user.setSalt(CommunityUtil.generateUUID().substring(0, 5));
         user.setPassword(CommunityUtil.md5(user.getPassword() + user.getSalt()));
-        user.setType(0);
+        user.setType(-1); //冻结权限
         user.setStatus(0);
         user.setActivationCode(CommunityUtil.generateUUID());
-        user.setHeaderUrl(String.format("http://images.nowcoder.com/head/%dt.png", new Random().nextInt(1000)));
+        user.setHeaderUrl("https://pic.joking7.com/202407130308761.jpeg");
         user.setCreateTime(new Date());
         userMapper.insertUser(user);
 
+        //激活邮件
+        // http://localhost:8080/community/activation/101/code
+        String url = domain + contextPath + "/activation" ;
+
+        try {
+            //true 代表支持复杂的类型
+            MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(javaMailSender.createMimeMessage(), true,"UTF-8");
+            //邮件发信人
+            mimeMessageHelper.setFrom(sendMailer);
+            //邮件收信人  1或多个
+            mimeMessageHelper.setTo(user.getEmail());
+            //邮件主题
+            mimeMessageHelper.setSubject("YaTian论坛账号激活");
+            //邮件内容
+            mimeMessageHelper.setText("您注册的账号ID是: "+user.getId()+"\n您的账号激活码是: "+user.getActivationCode()+"\n请点击右方链接前往激活: "+ url);
+            //邮件发送时间
+            mimeMessageHelper.setSentDate(new Date());
+            //发送邮件
+            javaMailSender.send(mimeMessageHelper.getMimeMessage());
+            //System.out.println("发送邮件成功：" + sendMailer + "->" + to);
+        }catch (MessagingException e) {
+            e.printStackTrace();
+            //System.out.println("发送邮件失败："+e.getMessage());
+        }
 
         return map;
     }
 
     /**
-     * TODO
      * @date 2024/7/18
      * @methodName activation
      * 激活状态判断
@@ -214,10 +240,12 @@ public class UserServiceImpl implements UserService, CommunityConstant {
     **/
     public int activation(int userId, String code) {
         User user = userMapper.selectById(userId);
+        if(user==null) return 403;
         if (user.getStatus() == 1) {
             return ACTIVATION_REPEAT;
         } else if (user.getActivationCode().equals(code)) {
             userMapper.updateStatus(userId, 1);//更改状态，变为已激活
+            userMapper.updateType(userId,0);//更改权限, 变为普通用户
             clearCache(userId);
             return ACTIVATION_SUCCESS;
         } else {
@@ -226,7 +254,6 @@ public class UserServiceImpl implements UserService, CommunityConstant {
     }
 
     /**
-     * TODO
      * @date 2024/7/19
      * @methodName findUserByName
      * 根据用户名查询用户
@@ -238,6 +265,20 @@ public class UserServiceImpl implements UserService, CommunityConstant {
     **/
     public User findUserByName(String username) {
         return userMapper.selectByName(username);
+    }
+
+    /**
+     * @date 2024/7/21
+     * @methodName checkPassword
+     * @param user 用户
+     * @param password 输入的密码
+     * @return boolean
+     * @author Joing7
+     * @throws
+     *
+    **/
+    public boolean checkPassword(User user,String password){
+        return user.getPassword().equals(CommunityUtil.md5(password + user.getSalt()));
     }
 
 }

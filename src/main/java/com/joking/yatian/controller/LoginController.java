@@ -9,7 +9,9 @@ import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
+import javax.swing.text.html.HTML;
 
+import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
 import com.joking.yatian.service.UserService;
 import com.joking.yatian.util.*;
@@ -18,6 +20,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FastByteArrayOutputStream;
 import org.springframework.web.bind.annotation.*;
@@ -54,37 +57,71 @@ public class LoginController implements CommunityConstant {
     @Value("${server.servlet.context-path}")
     private String contextPath;
 
+    /**
+     * @date 2024/7/22
+     * @methodName register
+     * 数据库添加用户数据 发送激活邮件
+     * @param username
+     * @param password
+     * @param email
+     * @return com.alibaba.fastjson2.JSONObject
+     * @author Joing7
+     * @throws
+     *
+    **/
     @PostMapping(path = "/register")
-    public JSONObject register(Model model, User user) {
+    public JSONObject register(@RequestParam("username") String username, @RequestParam("password") String password,@RequestParam("email") String email) {
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(password);
+        user.setEmail(email);
+
         Map<String, Object> map = userService.register(user);
-        JSONObject comResponse = new JSONObject();
         if (map == null || map.isEmpty()) {
-            //comResponse.setCode(200);
-            //comResponse.setMsg("注册成功,我们已经向您的邮箱发送了一封激活邮件,请尽快激活!");
+            return CommunityUtil.getJSONString(200,"注册成功,我们已经向您的邮箱发送了一封激活邮件,请尽快激活!",null);
         } else {
-            //comResponse.setCode(401);
-            //comResponse.setMsg(map.get("usernameMsg").toString()+map.get("passwordMsg").toString()+map.get("emailMsg").toString());
+            return CommunityUtil.getJSONString(401,map.getOrDefault("usernameMsg","").toString()+map.getOrDefault("passwordMsg","").toString()+map.getOrDefault("emailMsg","").toString(),null);
         }
-        return comResponse;
     }
 
-    @PostMapping(path = "/activation/{userId}/{code}")
-    public JSONObject activation(Model model, @PathVariable("userId") int userId, @PathVariable("code") String code) {
+    /**
+     * @date 2024/7/22
+     * @methodName activation
+     * 激活邮件指向的接口 返回JSON格式数据
+     * @param userId
+     * @param code
+     * @return com.alibaba.fastjson2.JSONObject
+     * @author Joing7
+     * @throws
+     *
+    **/
+    @RequestMapping(path = "/activation")
+    public JSONObject activation(@RequestParam("userId") int userId, @RequestParam("code") String code) {
         int result = userService.activation(userId, code);
-        JSONObject comResponse = new JSONObject();
+        //没查到user的逻辑
+        if(result==403){
+            return CommunityUtil.getJSONString(403,"激活失败,您提供的用户ID不正确!");
+        }
+        JSONObject comResponse;
         if (result == ACTIVATION_SUCCESS) {
-            //comResponse.setCode(200);
-            //comResponse.setMsg("激活成功,您的账号已经可以正常使用了!");
+            comResponse=CommunityUtil.getJSONString(200,"激活成功,您的账号已经可以正常使用了!");
         } else if (result == ACTIVATION_REPEAT) {
-            //comResponse.setCode(200);
-            //comResponse.setMsg("无效操作,该账号已经激活过了!");
+            comResponse=CommunityUtil.getJSONString(401,"无效操作,该账号已经激活过了!");
         } else {
-            //comResponse.setCode(401);
-            //comResponse.setMsg("激活失败,您提供的激活码不正确!");
+            comResponse=CommunityUtil.getJSONString(403,"激活失败,您提供的激活码不正确!");
         }
         return comResponse;
     }
 
+    /**
+     * @date 2024/7/22
+     * 获取图片验证码的接口
+     * @methodName getKaptcha
+     * @return com.alibaba.fastjson2.JSONObject
+     * @author Joing7
+     * @throws
+     *
+    **/
     @GetMapping(path = "/getKaptcha")
     public JSONObject getKaptcha() {
         JSONObject comResponse = new JSONObject();
@@ -115,6 +152,19 @@ public class LoginController implements CommunityConstant {
         return  CommunityUtil.getJSONString(200,"验证码生成成功!",map);
     }
 
+    /**
+     * @date 2024/7/22
+     * @methodName userLogin
+     * 登录成功返回JWT的登录token
+     * @param username 用户名
+     * @param password 用户密码
+     * @param kaptchaText 用户输入的验证码
+     * @param kaptchaKey redis中的验证码key,用于查找正确的验证码
+     * @return com.alibaba.fastjson2.JSONObject
+     * @author Joing7
+     * @throws
+     *
+    **/
     @PostMapping(path = "/login")
     public JSONObject userLogin(@RequestParam("username") String username, @RequestParam("password") String password,
                             @RequestParam("kaptchaText") String kaptchaText, @RequestParam("kaptchaKey") String kaptchaKey) {
@@ -129,7 +179,7 @@ public class LoginController implements CommunityConstant {
             // 检查用户名是否存在
             if (user != null) {
                 // 密码验证通过
-                if (Objects.equals(user.getPassword(), password)) {
+                if (userService.checkPassword(user,password)) {
                     // 登录成功，返回成功响应
                     //登录成功后生成token并发送
                     response = CommunityUtil.getJSONString(200,"登录成功!");
