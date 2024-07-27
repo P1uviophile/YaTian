@@ -223,7 +223,7 @@ public class DiscussPostService {
      * @MethodName: updateType
      * @Description: 更新贴子类型
      * @param id 贴子id
-     * @param type 贴子类型 :0-普通; 1-置顶;
+     * @param type 贴子类型 :0-普通; 1-置顶 ;
      * @return: int
      * @throws:
      * @author: Joking7
