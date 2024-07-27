@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.4.RELEASE</version>
+        <version>2.1.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.joking</groupId>
@@ -15,7 +15,7 @@
     <description>YaTian</description>
     <properties>
         <java.version>8</java.version>
-        <SpringBoot.version>2.2.4.RELEASE</SpringBoot.version>
+        <SpringBoot.version>2.1.5.RELEASE</SpringBoot.version>
         <MySQL.version>8.0.33</MySQL.version>
     </properties>
     <dependencies>
@@ -82,7 +82,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
-            <version>3.2.0</version>
         </dependency>
 
         <!-- 邮件插件依赖 https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-mail -->

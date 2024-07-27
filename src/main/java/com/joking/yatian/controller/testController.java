@@ -1,6 +1,7 @@
 package com.joking.yatian.controller;
 
 import com.joking.yatian.service.DiscussPostService;
+import com.joking.yatian.service.ElasticsearchService;
 import com.joking.yatian.util.RedisKeyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -21,10 +22,13 @@ public class testController {
     @Autowired
     private RedisTemplate redisTemplate;
 
+    @Autowired
+    private ElasticsearchService elasticsearchService;
+
     @GetMapping("/test")
     public String test() {
-        System.out.println(redisTemplate.opsForValue().get(RedisKeyUtil.getPostRowsKey()));
-        String ans = String.valueOf(discussPostService.findDiscussPostRows(0));
-        return ans;
+        Object res = elasticsearchService.searchDiscussPost("test",1,1);
+        if(res!=null) return String.valueOf(res);
+        return "null";
     }
 }

@@ -21,6 +21,11 @@ spring:
             enable: true
     default-encoding: x-utf-16le-bom
 
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 127.0.0.1:9300
+
 
 # JWT
 token:
@@ -48,7 +53,7 @@ mybatis:
 
 # ServerProperties
 server:
-  port: 8080
+  port: 8081
   servlet:
     context-path:
 
@@ -58,9 +63,3 @@ caffeine:
   posts:
     max-size: 15
     expire-seconds: 180
-
-# redis
-redis:
-  discuss-post:
-    fixedRate: 300000 # 自动更新时间 300秒
-    expire-seconds: 300 # 缓存过期时间 300秒

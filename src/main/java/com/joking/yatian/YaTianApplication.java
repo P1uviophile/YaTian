@@ -8,6 +8,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 public class YaTianApplication {
 
     public static void main(String[] args) {
+        System.setProperty("es.set.netty.runtime.available.processors", "false");
         SpringApplication.run(YaTianApplication.class, args);
     }
 

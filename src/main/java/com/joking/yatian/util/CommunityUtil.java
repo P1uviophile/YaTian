@@ -58,11 +58,7 @@ public class CommunityUtil {
         return getJSONString(code, msg, null);
     }
 
-
-    public static void main(String[] args) {
-        Map<String, Object> map = new HashMap<>();
-        map.put("name", "zhangsan");
-        map.put("age", 25);
-        System.out.println(getJSONString(0, "ok", map));
+    public static Object getJSONString(int code) {
+        return getJSONString(code, null, null);
     }
 }
