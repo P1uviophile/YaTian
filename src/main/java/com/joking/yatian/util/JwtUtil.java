@@ -22,7 +22,6 @@ public class JwtUtil {
     private String privateKey;
 
     /**
-     * TODO
      * @date 2024/7/17
      * @methodName getToken 返回根据 {用户id, 用户权限, 时间} 生成的Token
      * @param userId 用户id
@@ -42,7 +41,6 @@ public class JwtUtil {
     }
 
     /**
-     * TODO
      * @date 2024/7/17
      * @methodName parseToken 解析前端返回的token
      * @param token 待解析的token

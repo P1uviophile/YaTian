@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.5.RELEASE</version>
+        <version>2.2.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.joking</groupId>
@@ -15,7 +15,7 @@
     <description>YaTian</description>
     <properties>
         <java.version>8</java.version>
-        <SpringBoot.version>2.1.5</SpringBoot.version>
+        <SpringBoot.version>2.2.4.RELEASE</SpringBoot.version>
         <MySQL.version>8.0.33</MySQL.version>
     </properties>
     <dependencies>
@@ -82,14 +82,14 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
-            <version>3.1.0</version>
+            <version>3.2.0</version>
         </dependency>
 
         <!-- 邮件插件依赖 https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-mail -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
-            <version>2.1.5.RELEASE</version>
+            <version>2.2.4.RELEASE</version>
         </dependency>
 
         <!-- lang3 工具类依赖 -->
@@ -106,16 +106,6 @@
             <version>2.0.0</version>
         </dependency>
 
-        <!--thymeleaf 模板引擎相关-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.thymeleaf.extras</groupId>
-            <artifactId>thymeleaf-extras-springsecurity5</artifactId>
-        </dependency>
-
         <!--七牛云 依赖-->
         <dependency>
             <groupId>com.qiniu</groupId>
@@ -129,6 +119,19 @@
             <artifactId>junit-jupiter</artifactId>
             <version>RELEASE</version>
             <scope>test</scope>
+        </dependency>
+
+        <!--caffeine 依赖-->
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+            <version>2.7.0</version>
+        </dependency>
+
+        <!--kafka 依赖-->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
         </dependency>
 
     </dependencies>

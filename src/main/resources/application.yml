@@ -51,3 +51,16 @@ server:
   port: 8080
   servlet:
     context-path:
+
+
+# caffeine
+caffeine:
+  posts:
+    max-size: 15
+    expire-seconds: 180
+
+# redis
+redis:
+  discuss-post:
+    fixedRate: 300000 # 自动更新时间 300秒
+    expire-seconds: 300 # 缓存过期时间 300秒

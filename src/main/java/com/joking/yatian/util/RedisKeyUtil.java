@@ -14,7 +14,7 @@ public class RedisKeyUtil {
     private static final String PREFIX_FOLLOWER = "follower";
 
     /**
-     * 验证码
+     * 图片验证码
      */
     private static final String PREFIX_KAPTCHA = "kaptcha";
 
@@ -22,6 +22,7 @@ public class RedisKeyUtil {
      * 登录凭证(集成JWT后废用
      */
     //private static final String PREFIX_TICKET = "ticket";
+
     private static final String PREFIX_USER = "user";
 
     /**
@@ -34,7 +35,6 @@ public class RedisKeyUtil {
 
 
     /**
-     * TODO
      * @date 2024/7/18
      * @methodName getEntityLikeKey
      * 某个实体收到的赞，如帖子，评论
@@ -51,7 +51,6 @@ public class RedisKeyUtil {
     }
 
     /**
-     * TODO
      * @date 2024/7/18
      * @methodName getUserLikeKey
      * 某个用户收到的总赞数
@@ -67,7 +66,6 @@ public class RedisKeyUtil {
     }
 
     /**
-     * TODO
      * @date 2024/7/18
      * @methodName getFolloweeKey
      * 某个用户关注的实体
@@ -85,7 +83,6 @@ public class RedisKeyUtil {
     }
 
     /**
-     * TODO
      * @date 2024/7/18
      * @methodName getFollowerKey
      * 某个实体拥有的粉丝，实体可能是用户，或者是帖子
@@ -102,7 +99,6 @@ public class RedisKeyUtil {
     }
 
     /**
-     * TODO
      * @date 2024/7/18
      * @methodName getKaptchaKey
      * 登录验证码
@@ -118,7 +114,6 @@ public class RedisKeyUtil {
     }
 
     /**
-     * TODO
      * @date 2024/7/18
      * @methodName getTicketKey
      * 登录的凭证
@@ -131,7 +126,6 @@ public class RedisKeyUtil {
     //public static String getTicketKey(String ticket) {return PREFIX_TICKET + SPLIT + ticket;}
 
     /**
-     * TODO
      * @date 2024/7/18
      * @methodName getUserKey
      * 用户
@@ -146,7 +140,6 @@ public class RedisKeyUtil {
     }
 
     /**
-     * TODO
      * @date 2024/7/18
      * @methodName getUVKey
      * 单日uv
@@ -161,7 +154,6 @@ public class RedisKeyUtil {
     }
 
     /**
-     * TODO
      * @date 2024/7/18
      * @methodName getUVKey
      * 区间UV
@@ -177,7 +169,6 @@ public class RedisKeyUtil {
     }
 
     /**
-     * TODO
      * @date 2024/7/18
      * @methodName getDAUKey
      * 单日DAU
@@ -192,7 +183,6 @@ public class RedisKeyUtil {
     }
 
     /**
-     * TODO
      * @date 2024/7/18
      * @methodName getDAUKey
      * 区间DAU
@@ -208,7 +198,6 @@ public class RedisKeyUtil {
     }
 
     /**
-     * TODO
      * @date 2024/7/18
      * @methodName getPostScoreKey
      * 帖子分数
@@ -219,5 +208,13 @@ public class RedisKeyUtil {
     **/
     public static String getPostScoreKey() {
         return PREFIX_POST + SPLIT + "score";
+    }
+
+    public static String getPostRowsKey() {
+        return PREFIX_POST + SPLIT + "rows";
+    }
+
+    public static String getPostHotKey() {
+        return PREFIX_POST + SPLIT + "hot";
     }
 }
