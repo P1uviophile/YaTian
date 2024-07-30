@@ -133,6 +133,12 @@
             <artifactId>spring-kafka</artifactId>
         </dependency>
 
+        <!-- quartz 依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-quartz</artifactId>
+        </dependency>
+
     </dependencies>
 
     <!-- 配置镜像源 -->

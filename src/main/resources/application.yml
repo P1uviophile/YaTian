@@ -91,7 +91,7 @@ qiniu:
       url: yatian-pic-header.joking7.com
     share:
       name: yatian-pic-share
-      url: shefcrxc7.hd-bkt.clouddn.com
+      url: yatian-pic-share.joking7.com
 
 # logback
 logging:
