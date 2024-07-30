@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
 
-import com.alibaba.fastjson2.JSONObject;
+import com.alibaba.fastjson.JSONObject;
 import com.joking.yatian.service.UserService;
 import com.joking.yatian.util.*;
 import org.slf4j.Logger;
@@ -59,7 +59,7 @@ public class LoginController implements CommunityConstant {
      * @param username
      * @param password
      * @param email
-     * @return com.alibaba.fastjson2.JSONObject
+     * @return com.alibaba.fastjson.JSONObject
      * @author Joing7
      * @throws
      *
@@ -85,7 +85,7 @@ public class LoginController implements CommunityConstant {
      * 激活邮件指向的接口 返回JSON格式数据
      * @param userId
      * @param code
-     * @return com.alibaba.fastjson2.JSONObject
+     * @return com.alibaba.fastjson.JSONObject
      * @author Joing7
      * @throws
      *
@@ -112,7 +112,7 @@ public class LoginController implements CommunityConstant {
      * @date 2024/7/22
      * 获取图片验证码的接口
      * @methodName getKaptcha
-     * @return com.alibaba.fastjson2.JSONObject
+     * @return com.alibaba.fastjson.JSONObject
      * @author Joing7
      * @throws
      *

@@ -1,0 +1,190 @@
+2024-07-30 03:51:33,223 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:4d12185d5c1e4ba2834c4d1466a13a73
+2024-07-30 03:56:20,365 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:ee9fcb1ec78044618eeea1e70894108d
+2024-07-30 03:57:14,306 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:bf4d713f5d29459faf1ab5a0d6fdefd3
+2024-07-30 03:57:58,037 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:bdfc2d0546af427f8530afe0e10e21af
+2024-07-30 03:59:45,775 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:467e4f5ba37e48da8b3e84a402c46842
+2024-07-30 04:05:37,788 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:184] 执行时间过长,终止任务:b06d25f141104855a33c2fbcc28b0f75
+2024-07-30 04:05:49,906 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:4570a167e9c54930b76039013ea54875
+2024-07-30 04:07:07,043 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:0f04808038464c84a925d0951a70db99
+2024-07-30 04:07:55,088 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:de7678ff644e4fc18649285c498abbcc
+2024-07-30 04:09:03,792 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:34e989f06aa4475cacd6e0c305447a82
+2024-07-30 04:12:42,054 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:918f823ccab0429c8d9b1c0fc1fe1333
+2024-07-30 04:13:54,618 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:740064ee943a48f1bbfc578d496c821b
+2024-07-30 04:17:09,675 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:44f65f5116ae4faa9c2222da725e0fad
+2024-07-30 04:19:33,793 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:0e5d11efae0940cc8cdf9a0d648789b1
+2024-07-30 04:19:52,111 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:bcfcab9a74ff44ecbe66ec79ede9e5d8
+2024-07-30 04:20:06,794 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:f76ce132fb6c433c94f52843a1296309
+2024-07-30 04:22:47,996 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:844c2c3c4e504c43ad228cea76647cd7
+2024-07-30 04:23:33,109 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:f31b8406d7364354a99f7b59b0995af8
+2024-07-30 04:24:18,603 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:eff93530e2874fbba2b178243f3aa0cc
+2024-07-30 04:26:22,801 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:cb72147bc945424b8e5659ec7289f077
+2024-07-30 04:27:10,676 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:c8f44cb3776b47d597c63ffee2e550f0
+2024-07-30 04:28:39,936 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:0ba9136ddad6419a801b053d83569876
+2024-07-30 04:29:19,444 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:778d41f3a598494dbcbe5286cb7d7bd1
+2024-07-30 04:31:29,070 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:d902369199724bee90ac3a9393219e25
+2024-07-30 04:34:12,905 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:184] 执行时间过长,终止任务:0c72febf3e224982ae2a7fd2e972381d
+2024-07-30 04:35:18,404 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:184] 执行时间过长,终止任务:e3733afb951e4955a14566cadd85e418
+2024-07-30 04:35:56,364 ERROR [main] o.s.d.e.r.s.AbstractElasticsearchRepository [AbstractElasticsearchRepository.java:91] failed to load elasticsearch nodes : org.elasticsearch.client.transport.NoNodeAvailableException: None of the configured nodes are available: [{#transport#-1}{DcJfpteNQMGdkpbgvHoKEA}{127.0.0.1}{127.0.0.1:9300}]
+2024-07-30 04:36:58,292 ERROR [main] o.s.b.SpringApplication [SpringApplication.java:858] Application run failed
+org.springframework.context.ApplicationContextException: Failed to start bean 'org.springframework.kafka.config.internalKafkaListenerEndpointRegistry'; nested exception is org.apache.kafka.common.errors.TimeoutException: Timeout expired while fetching topic metadata
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:185)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:53)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:360)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:158)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:122)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:893)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.joking.yatian.YaTianApplication.main(YaTianApplication.java:18)
+Caused by: org.apache.kafka.common.errors.TimeoutException: Timeout expired while fetching topic metadata
+2024-07-30 23:12:40,688 ERROR [main] o.s.b.SpringApplication [SpringApplication.java:858] Application run failed
+org.springframework.context.ApplicationContextException: Failed to start bean 'org.springframework.kafka.config.internalKafkaListenerEndpointRegistry'; nested exception is org.apache.kafka.common.errors.TimeoutException: Timeout expired while fetching topic metadata
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:185)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:53)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:360)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:158)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:122)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:893)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.joking.yatian.YaTianApplication.main(YaTianApplication.java:18)
+Caused by: org.apache.kafka.common.errors.TimeoutException: Timeout expired while fetching topic metadata
+2024-07-30 23:15:45,639 ERROR [main] o.s.b.SpringApplication [SpringApplication.java:858] Application run failed
+org.springframework.context.ApplicationContextException: Failed to start bean 'org.springframework.kafka.config.internalKafkaListenerEndpointRegistry'; nested exception is org.apache.kafka.common.KafkaException: Unexpected error fetching metadata for topic share
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:185)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:53)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:360)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:158)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:122)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:893)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.joking.yatian.YaTianApplication.main(YaTianApplication.java:18)
+Caused by: org.apache.kafka.common.KafkaException: Unexpected error fetching metadata for topic share
+	at org.apache.kafka.clients.consumer.internals.Fetcher.getTopicMetadata(Fetcher.java:327)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.partitionsFor(KafkaConsumer.java:1774)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.partitionsFor(KafkaConsumer.java:1742)
+	at org.springframework.kafka.listener.AbstractMessageListenerContainer.checkTopics(AbstractMessageListenerContainer.java:296)
+	at org.springframework.kafka.listener.ConcurrentMessageListenerContainer.doStart(ConcurrentMessageListenerContainer.java:136)
+	at org.springframework.kafka.listener.AbstractMessageListenerContainer.start(AbstractMessageListenerContainer.java:276)
+	at org.springframework.kafka.config.KafkaListenerEndpointRegistry.startIfNecessary(KafkaListenerEndpointRegistry.java:306)
+	at org.springframework.kafka.config.KafkaListenerEndpointRegistry.start(KafkaListenerEndpointRegistry.java:255)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:182)
+	... 14 common frames omitted
+Caused by: org.apache.kafka.common.errors.InvalidReplicationFactorException: Replication factor is below 1 or larger than the number of available brokers.
+2024-07-30 23:19:13,984 ERROR [main] o.s.b.SpringApplication [SpringApplication.java:858] Application run failed
+org.springframework.context.ApplicationContextException: Failed to start bean 'org.springframework.kafka.config.internalKafkaListenerEndpointRegistry'; nested exception is org.apache.kafka.common.KafkaException: Unexpected error fetching metadata for topic share
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:185)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:53)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:360)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:158)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:122)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:893)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.joking.yatian.YaTianApplication.main(YaTianApplication.java:18)
+Caused by: org.apache.kafka.common.KafkaException: Unexpected error fetching metadata for topic share
+	at org.apache.kafka.clients.consumer.internals.Fetcher.getTopicMetadata(Fetcher.java:327)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.partitionsFor(KafkaConsumer.java:1774)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.partitionsFor(KafkaConsumer.java:1742)
+	at org.springframework.kafka.listener.AbstractMessageListenerContainer.checkTopics(AbstractMessageListenerContainer.java:296)
+	at org.springframework.kafka.listener.ConcurrentMessageListenerContainer.doStart(ConcurrentMessageListenerContainer.java:136)
+	at org.springframework.kafka.listener.AbstractMessageListenerContainer.start(AbstractMessageListenerContainer.java:276)
+	at org.springframework.kafka.config.KafkaListenerEndpointRegistry.startIfNecessary(KafkaListenerEndpointRegistry.java:306)
+	at org.springframework.kafka.config.KafkaListenerEndpointRegistry.start(KafkaListenerEndpointRegistry.java:255)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:182)
+	... 14 common frames omitted
+Caused by: org.apache.kafka.common.errors.InvalidReplicationFactorException: Replication factor is below 1 or larger than the number of available brokers.
+2024-07-30 23:28:37,377 ERROR [main] o.s.b.SpringApplication [SpringApplication.java:858] Application run failed
+org.springframework.context.ApplicationContextException: Failed to start bean 'org.springframework.kafka.config.internalKafkaListenerEndpointRegistry'; nested exception is org.apache.kafka.common.KafkaException: Unexpected error fetching metadata for topic share
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:185)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:53)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:360)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:158)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:122)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:893)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.joking.yatian.YaTianApplication.main(YaTianApplication.java:18)
+Caused by: org.apache.kafka.common.KafkaException: Unexpected error fetching metadata for topic share
+	at org.apache.kafka.clients.consumer.internals.Fetcher.getTopicMetadata(Fetcher.java:327)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.partitionsFor(KafkaConsumer.java:1774)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.partitionsFor(KafkaConsumer.java:1742)
+	at org.springframework.kafka.listener.AbstractMessageListenerContainer.checkTopics(AbstractMessageListenerContainer.java:296)
+	at org.springframework.kafka.listener.ConcurrentMessageListenerContainer.doStart(ConcurrentMessageListenerContainer.java:136)
+	at org.springframework.kafka.listener.AbstractMessageListenerContainer.start(AbstractMessageListenerContainer.java:276)
+	at org.springframework.kafka.config.KafkaListenerEndpointRegistry.startIfNecessary(KafkaListenerEndpointRegistry.java:306)
+	at org.springframework.kafka.config.KafkaListenerEndpointRegistry.start(KafkaListenerEndpointRegistry.java:255)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:182)
+	... 14 common frames omitted
+Caused by: org.apache.kafka.common.errors.InvalidReplicationFactorException: Replication factor is below 1 or larger than the number of available brokers.
+2024-07-30 23:32:39,169 ERROR [main] o.s.b.SpringApplication [SpringApplication.java:858] Application run failed
+org.springframework.context.ApplicationContextException: Failed to start bean 'org.springframework.kafka.config.internalKafkaListenerEndpointRegistry'; nested exception is org.apache.kafka.common.KafkaException: Unexpected error fetching metadata for topic share
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:185)
+	at org.springframework.context.support.DefaultLifecycleProcessor.access$200(DefaultLifecycleProcessor.java:53)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:360)
+	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:158)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:122)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:893)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.joking.yatian.YaTianApplication.main(YaTianApplication.java:18)
+Caused by: org.apache.kafka.common.KafkaException: Unexpected error fetching metadata for topic share
+	at org.apache.kafka.clients.consumer.internals.Fetcher.getTopicMetadata(Fetcher.java:327)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.partitionsFor(KafkaConsumer.java:1774)
+	at org.apache.kafka.clients.consumer.KafkaConsumer.partitionsFor(KafkaConsumer.java:1742)
+	at org.springframework.kafka.listener.AbstractMessageListenerContainer.checkTopics(AbstractMessageListenerContainer.java:296)
+	at org.springframework.kafka.listener.ConcurrentMessageListenerContainer.doStart(ConcurrentMessageListenerContainer.java:136)
+	at org.springframework.kafka.listener.AbstractMessageListenerContainer.start(AbstractMessageListenerContainer.java:276)
+	at org.springframework.kafka.config.KafkaListenerEndpointRegistry.startIfNecessary(KafkaListenerEndpointRegistry.java:306)
+	at org.springframework.kafka.config.KafkaListenerEndpointRegistry.start(KafkaListenerEndpointRegistry.java:255)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:182)
+	... 14 common frames omitted
+Caused by: org.apache.kafka.common.errors.InvalidReplicationFactorException: Replication factor is below 1 or larger than the number of available brokers.
+2024-07-30 23:37:55,879 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:184] 执行时间过长,终止任务:2f1e39bf46ac424db291dd634d893120
+2024-07-30 23:38:36,678 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:184] 执行时间过长,终止任务:c2e3f8e41d074ebc8d230645cd2e0b01
+2024-07-30 23:41:10,916 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:184] 执行时间过长,终止任务:eff0dc554c674e318ac766a3d9084586
+2024-07-30 23:41:56,440 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:184] 执行时间过长,终止任务:4ae6d511059247509fe3fd335390f5de
+2024-07-30 23:42:29,344 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:184] 执行时间过长,终止任务:b42c703928f14b1faf1c9d602beaf907
+2024-07-30 23:43:19,680 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:184] 执行时间过长,终止任务:7f49c385d3db4cb38d89c372bf167560
+2024-07-30 23:43:56,329 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:184] 执行时间过长,终止任务:91755c4d139a4201a999735659b37251
+2024-07-30 23:45:17,362 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:184] 执行时间过长,终止任务:c99ee93d262445d8b73a1c67d96abdd4
+2024-07-30 23:53:42,850 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:184] 执行时间过长,终止任务:0541c8ebf9a04b078386dde5bab686d4
+2024-07-30 23:54:36,778 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:ad32ded34fba44cdb03a94be8526c3c1
+2024-07-30 23:56:33,731 ERROR [scheduling-1] c.j.y.e.EventConsumer [EventConsumer.java:191] 上传次数过多,终止任务:e9eefc28f53f4a8595dd1854f6ebd714

@@ -1,3 +1,5 @@
+
+
 spring:
 
   # 连接MySQL
@@ -26,6 +28,14 @@ spring:
       cluster-name: elasticsearch
       cluster-nodes: 127.0.0.1:9300
 
+  # KafkaProperties
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: community-consumer-group
+      enable-auto-commit: true
+      auto-commit-interval: 3000
+
 
 # JWT
 token:
@@ -39,7 +49,7 @@ token:
 community:
   path:
     # 开发用
-    domain_springboot: http://localhost:8080
+    domain: http://localhost:8081
     domain_vue: http://localhost:5173
     # upload: J:/javaProject/data/upload
 
@@ -63,3 +73,26 @@ caffeine:
   posts:
     max-size: 15
     expire-seconds: 180
+
+# 配置wkhtmltoimage
+wk:
+  image:
+    command: D:\\codeRelated\\wkhtml\\wkhtmltopdf\\bin\\wkhtmltoimage.exe
+    storage: D:/codeData/wkhtmltoimage
+
+# qiniu
+qiniu:
+  key:
+    access: zGvmrQUw250mt5AgPShm1izDKll9o4b-tG_nnY38
+    secret: Vnc3HSTuvPmwGZb0bRPbnn1CSMmr0UYeRwjoESfK
+  bucket:
+    header:
+      name: yatian-pic-header
+      url: yatian-pic-header.joking7.com
+    share:
+      name: yatian-pic-share
+      url: shefcrxc7.hd-bkt.clouddn.com
+
+# logback
+logging:
+  cofig: classpath:logback-spring-${spring.profiles.active}.xml
