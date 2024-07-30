@@ -42,7 +42,9 @@ public class PostScoreRefreshJob implements Job, CommunityConstant {
     @Autowired
     private ElasticsearchService elasticsearchService;
 
-    // 论坛纪元
+    /**
+     * 论坛纪元
+     */
     private static final Date epoch;
 
     // 静态代码块：用staitc声明，jvm加载类时执行，仅执行一次
@@ -71,6 +73,15 @@ public class PostScoreRefreshJob implements Job, CommunityConstant {
         logger.info("[任务结束] 帖子分数刷新完毕!");
     }
 
+    /**
+     * @MethodName: refresh
+     * @Description: 刷新贴子分数
+     * @param postId
+     * @return: void
+     * @throws:
+     * @author: Joking7
+     * @Date: 2024/7/31 上午2:20
+     */
     private void refresh(int postId) {
         DiscussPost post = discussPostService.findDiscussPostById(postId);
         if (post == null) {
