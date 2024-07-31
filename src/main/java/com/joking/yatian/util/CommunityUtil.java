@@ -58,7 +58,7 @@ public class CommunityUtil {
         return getJSONString(code, msg, null);
     }
 
-    public static Object getJSONString(int code) {
+    public static JSONObject getJSONString(int code) {
         return getJSONString(code, null, null);
     }
 }

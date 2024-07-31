@@ -51,4 +51,8 @@
         update user set password = #{password} where id = #{id}
     </update>
 
+    <update id="updateName">
+        update user set username = #{name} where id = #{id}
+    </update>
+
 </mapper>

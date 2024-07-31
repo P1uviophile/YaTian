@@ -26,15 +26,21 @@ spring:
   data:
     elasticsearch:
       cluster-name: elasticsearch
-      cluster-nodes: 127.0.0.1:9300
+      cluster-nodes: 47.113.222.46:9300
 
   # KafkaProperties
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: 47.113.222.46:9092
     consumer:
       group-id: community-consumer-group
       enable-auto-commit: true
       auto-commit-interval: 3000
+
+  # redis
+  redis:
+    host: 47.113.222.46
+    port: 6379
+    # password: jk18889903808
 
 
 # JWT
@@ -89,6 +95,7 @@ qiniu:
     header:
       name: yatian-pic-header
       url: yatian-pic-header.joking7.com
+
     share:
       name: yatian-pic-share
       url: yatian-pic-share.joking7.com

@@ -178,7 +178,8 @@ public class LoginController implements CommunityConstant {
                     // 登录成功，返回成功响应
                     //登录成功后生成token并发送
                     response = CommunityUtil.getJSONString(200,"登录成功!");
-                    response.put("loginToken",jwtUtil.getToken(username, "user"));
+                    response.put("loginToken",jwtUtil.getToken(String.valueOf(user.getId()), String.valueOf(user.getType())));
+                    response.put("headerUrl",user.getHeaderUrl());
                 } else {
                     // 密码错误，返回失败响应
                     response = CommunityUtil.getJSONString(401,"密码错误!");

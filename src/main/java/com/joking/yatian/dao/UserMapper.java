@@ -27,4 +27,5 @@ public interface UserMapper {
 
     int updateType(int id, int type);
 
+    int updateName(int id, String name);
 }

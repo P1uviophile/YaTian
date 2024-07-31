@@ -46,7 +46,7 @@ public class UserService implements CommunityConstant {
     /**
      * @date 2024/7/18
      * @methodName findUserById
-     * 根据用户id查询用户信息
+     * 根据用户id查询用户信息 走redis缓存
      * @param id 用户id
      * @return com.joking.yatian.entity.User
      * @author Joing7
@@ -276,4 +276,56 @@ public class UserService implements CommunityConstant {
         return user.getPassword().equals(CommunityUtil.md5(password + user.getSalt()));
     }
 
+    /**
+     * @MethodName: updateHeader
+     * @Description: 更新用户头像
+     * @param id
+     * @param headerUrl
+     * @return: int
+     * @throws:
+     * @author: Joking7
+     * @Date: 2024/7/31 下午3:51
+     */
+    public int updateHeader(int id, String headerUrl) {
+        //先去更新，再去清理缓存。可以避免更新数据库失败，缓存消失的现象。现在：数据库更新失败，缓存不会清除
+        int rows = userMapper.updateHeader(id, headerUrl);
+        clearCache(id);
+        return rows;
+    }
+
+    /**
+     * @MethodName: updateName
+     * @Description: 更新用户名
+     * @param id
+     * @param newName
+     * @return: int
+     * @throws:
+     * @author: Joking7
+     * @Date: 2024/7/31 下午9:14
+     */
+    public int updateName(int id, String newName) {
+        if(findUserByName(newName)==null) return -1;
+        //先去更新，再去清理缓存。可以避免更新数据库失败，缓存消失的现象。现在：数据库更新失败，缓存不会清除
+        int rows = userMapper.updateName(id, newName);
+        clearCache(id);
+        return rows;
+    }
+
+    /**
+     * @MethodName: updatePassword
+     * @Description: 更新用户密码
+     * @param id
+     * @param newPassword
+     * @param oldPassword
+     * @return: int
+     * @throws:
+     * @author: Joking7
+     * @Date: 2024/7/31 下午9:37
+     */
+    public int updatePassword(int id,String newPassword,String oldPassword){
+        if(findUserById(id).getPassword().equals(oldPassword)){
+            clearCache(id);
+            return userMapper.updatePassword(id, newPassword);
+        }else return -1;
+    }
 }
