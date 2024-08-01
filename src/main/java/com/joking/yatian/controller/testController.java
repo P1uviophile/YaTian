@@ -1,23 +1,19 @@
 package com.joking.yatian.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.joking.yatian.entity.Event;
+import com.joking.yatian.entity.*;
 import com.joking.yatian.event.EventProducer;
-import com.joking.yatian.service.DiscussPostService;
-import com.joking.yatian.service.ElasticsearchService;
+import com.joking.yatian.service.*;
 import com.joking.yatian.util.CommunityConstant;
 import com.joking.yatian.util.CommunityUtil;
+import com.joking.yatian.util.JwtUtil;
 import com.joking.yatian.util.RedisKeyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author Joking7
@@ -31,49 +27,125 @@ public class testController implements CommunityConstant {
     private DiscussPostService discussPostService;
 
     @Autowired
+    private UserService userService;
+
+    @Autowired
+    private CommentService commentService;
+
+    @Autowired
+    private LikeService likeService;
+
+    @Autowired
+    private EventProducer eventProducer;
+
+    @Autowired
     private RedisTemplate redisTemplate;
 
     @Autowired
     private ElasticsearchService elasticsearchService;
 
     @Autowired
-    private EventProducer eventProducer;
+    private JwtUtil jwtUtil;
 
-    @Value("${community.path.domain}")
-    private String domain;
+    @RequestMapping (path = "/test/{discussPostId}")
+    public JSONObject getDiscussPost(@PathVariable("discussPostId") int discussPostId,@RequestHeader("userToken") String token) {
+        JSONObject response = CommunityUtil.getJSONString(200);
+        // 帖子
+        DiscussPost post = discussPostService.findDiscussPostById(discussPostId);
+        //model.addAttribute("post", post);
 
-    @Value("${server.servlet.context-path}")
-    private String contextPath;
+        // 处理贴子被删除的情况
+        if(post.getStatus()==2) return CommunityUtil.getJSONString(404,"该内容已被删除!");
 
-    @Value("${wk.image.storage}")
-    private String wkImageStorage;
+        if (post == null) {
+            response = CommunityUtil.getJSONString(404,"没有找到贴子");
+            return response;
+        }
+        response.put("discussPost", post);
 
-    @Value("${qiniu.bucket.share.url}")
-    private String shareBucketUrl;
+        // 作者
+        User user = userService.findUserById(post.getUserId());
+        //model.addAttribute("user", user);
+        response.put("user", user);
 
-    @PostMapping(path = "/test")
-    public JSONObject share(@RequestParam("html") String htmlUrl) {
-        System.out.println(htmlUrl);
-        // 文件名
-        String fileName = CommunityUtil.generateUUID();
+        User thisUser = userService.findUserById(Integer.parseInt(jwtUtil.parseToken(token).get("userId")));
+        // 点赞数量
+        long likeCount = likeService.findEntityLikeCount(ENTITY_TYPE_POST, discussPostId);
+        response.put("likeCount", likeCount);
+        //model.addAttribute("likeCount", likeCount);
+        // 点赞状态
+        int likeStatus = thisUser == null ? 0 :
+                likeService.findEntityLikeStatus(ENTITY_TYPE_POST, discussPostId, thisUser.getId());
+        response.put("likeStatus", likeStatus);
+        //model.addAttribute("likeStatus", likeStatus);
 
-        // 异步生成长图
-        Event event = new Event()
-                .setTopic(TOPIC_SHARE)
-                .setData("htmlUrl", htmlUrl)
-                .setData("fileName", fileName)
-                .setData("suffix", ".png");
-        eventProducer.fireEvent(event);
-        System.out.println(event.getData().toString());
+        Page page = new Page();
+        // 评论分页信息
+        page.setLimit(5);
+        page.setPath("/discuss/detail/" + discussPostId);
+        page.setRows(post.getCommentCount());
+        response.put("page", page);
 
-        // 返回访问路径
-        Map<String, Object> map = new HashMap<>();
+        // 评论: 给帖子的评论
+        // 回复: 给评论的评论
+        // 评论列表
+        List<Comment> commentList = commentService.findCommentsByEntity(
+                ENTITY_TYPE_POST, post.getId(), page.getOffset(), page.getLimit());
+        // 评论VO列表
+        List<Map<String, Object>> commentVoList = new ArrayList<>();
+        if (commentList != null) {
+            for (Comment comment : commentList) {
+                // 评论VO
+                Map<String, Object> commentVo = new HashMap<>();
+                // 评论
+                commentVo.put("comment", comment);
+                // 作者
+                commentVo.put("user", userService.findUserById(comment.getUserId()));
 
-        // 废弃，这是原来本地的方式
-//        map.put("shareUrl", domain + contextPath + "/share/image/" + fileName);
+                //点赞数量
+                likeCount = likeService.findEntityLikeCount(ENTITY_TYPE_COMMENT, comment.getId());
+                commentVo.put("likeCount", likeCount);
+                //点赞状态,需要判断当前用户是否登录，没有登录无法点赞
+                likeStatus = thisUser == null ? 0 : likeService.findEntityLikeStatus(ENTITY_TYPE_COMMENT, comment.getId(), thisUser.getId());
+                commentVo.put("likeStatus", likeStatus);
+                // 回复列表
+                List<Comment> replyList = commentService.findCommentsByEntity(
+                        ENTITY_TYPE_COMMENT, comment.getId(), 0, Integer.MAX_VALUE);
+                // 回复VO列表
+                List<Map<String, Object>> replyVoList = new ArrayList<>();
+                if (replyList != null) {
+                    for (Comment reply : replyList) {
+                        Map<String, Object> replyVo = new HashMap<>();
+                        // 回复
+                        replyVo.put("reply", reply);
+                        // 作者
+                        replyVo.put("user", userService.findUserById(reply.getUserId()));
+                        // 回复目标
+                        User target = reply.getTargetId() == 0 ? null : userService.findUserById(reply.getTargetId());
+                        replyVo.put("target", target);
 
-        map.put("shareUrl", shareBucketUrl + "/" + fileName);
+                        //点赞数量
+                        likeCount = likeService.findEntityLikeCount(ENTITY_TYPE_COMMENT, reply.getId());
+                        replyVo.put("likeCount", likeCount);
+                        //点赞状态,需要判断当前用户是否登录，没有登录无法点赞
+                        likeStatus = thisUser == null ? 0 : likeService.findEntityLikeStatus(ENTITY_TYPE_COMMENT, reply.getId(), thisUser.getId());
+                        replyVo.put("likeStatus", likeStatus);
 
-        return CommunityUtil.getJSONString(0, null, map);
+                        replyVoList.add(replyVo);
+                    }
+                }
+                commentVo.put("replys", replyVoList);
+
+                // 回复数量
+                int replyCount = commentService.findCommentCount(ENTITY_TYPE_COMMENT, comment.getId());
+                commentVo.put("replyCount", replyCount);
+
+                commentVoList.add(commentVo);
+            }
+        }
+        response.put("comments", commentVoList);
+        //model.addAttribute("comments", commentVoList);
+
+        return response;
     }
 }

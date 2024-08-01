@@ -88,6 +88,7 @@ public class UserService implements CommunityConstant {
     **/
     public User initCache(int userId) {
         User user = userMapper.selectById(userId);
+        if(user == null) {return null;}
         String userKey = RedisKeyUtil.getUserKey(userId);
         //过期时间1h，3600s
         redisTemplate.opsForValue().set(userKey, user, 3600, TimeUnit.SECONDS);

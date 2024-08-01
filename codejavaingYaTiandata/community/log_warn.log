@@ -1,124 +1,463 @@
-2024-07-31 15:15:14,067 WARN [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java:557] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userController': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'community.path.upload' in value "${community.path.upload}"
-2024-07-31 15:15:33,721 WARN [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java:557] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userController': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'community.path.upload' in value "${community.path.upload}"
-2024-07-31 15:17:40,489 WARN [http-nio-8081-exec-3] o.s.w.s.m.s.DefaultHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:198] Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'username' is not present]
-2024-07-31 15:17:51,501 WARN [http-nio-8081-exec-4] o.s.w.s.m.s.DefaultHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:198] Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'kaptchaText' is not present]
-2024-07-31 18:44:28,068 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
-2024-07-31 18:44:49,204 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
-2024-07-31 18:47:46,347 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
-2024-07-31 18:48:07,485 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
-2024-07-31 18:48:25,330 WARN [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java:557] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'org.springframework.kafka.config.internalKafkaListenerEndpointRegistry'; nested exception is org.apache.kafka.common.errors.TimeoutException: Timeout expired while fetching topic metadata
-2024-07-31 18:58:32,982 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
-2024-07-31 18:58:35,333 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
-2024-07-31 18:58:37,682 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
-2024-07-31 18:58:40,107 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
-2024-07-31 18:58:42,918 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
-2024-07-31 19:35:23,965 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
-2024-07-31 19:35:26,380 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
-2024-07-31 19:35:28,838 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
-2024-07-31 19:35:31,327 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
-2024-07-31 19:35:37,950 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:35:40,097 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:35:42,230 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:35:44,475 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:35:46,952 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:38:36,842 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:38:38,998 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:38:41,130 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:38:43,362 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:38:45,962 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:38:48,949 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:38:51,959 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:38:55,162 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:38:58,360 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:39:01,360 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:39:04,480 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:39:07,498 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:39:10,391 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:39:13,412 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:39:16,535 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:39:19,659 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:39:22,897 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:39:26,016 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:39:29,230 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:39:32,228 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:39:34,547 WARN [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java:557] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'org.springframework.kafka.config.internalKafkaListenerEndpointRegistry'; nested exception is org.apache.kafka.common.errors.TimeoutException: Timeout expired while fetching topic metadata
-2024-07-31 19:44:28,292 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:44:28,306 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-3, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:44:30,392 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:44:30,453 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-3, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:44:32,544 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:44:32,604 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-3, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:44:34,820 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:44:34,852 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-3, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:44:37,291 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:44:37,323 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-3, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:44:40,142 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:44:40,234 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-3, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:44:43,157 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:44:43,233 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-3, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:44:46,121 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:44:46,137 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-3, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:44:49,335 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:44:49,381 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-3, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:44:52,355 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:44:52,600 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-3, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:44:55,309 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:44:55,599 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-3, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:44:58,312 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:44:58,818 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-3, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:01,388 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:01,927 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-3, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:04,515 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:04,930 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-3, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:07,515 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:07,927 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-3, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:10,520 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:11,026 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-3, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:13,476 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:14,120 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-3, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:16,605 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:17,320 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-3, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:19,636 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:20,539 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-3, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:22,830 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:23,538 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-3, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:25,906 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:26,033 WARN [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [AbstractApplicationContext.java:557] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'org.springframework.kafka.config.internalKafkaListenerEndpointRegistry'; nested exception is org.apache.kafka.common.errors.TimeoutException: Timeout expired while fetching topic metadata
-2024-07-31 19:45:29,053 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:32,070 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:35,027 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:38,168 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:41,178 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:44,064 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:47,331 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:50,467 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:53,362 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:56,261 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:45:59,409 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:46:02,539 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:46:05,747 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:46:08,822 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:46:11,965 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:46:15,029 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:46:18,108 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:46:21,011 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:46:24,215 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:46:27,305 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:46:30,501 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:46:33,639 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:46:36,655 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:46:39,560 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:46:42,527 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:46:45,790 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:46:48,669 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:46:51,865 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:46:54,818 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:46:57,903 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:47:01,042 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:47:03,996 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:47:07,139 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:47:18,319 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:47:20,456 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:47:22,601 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:47:24,842 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
-2024-07-31 19:54:57,985 WARN [http-nio-8081-exec-1] o.s.w.s.m.s.DefaultHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:198] Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'kaptchaText' is not present]
+2024-08-02 02:40:15,396 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2024-08-02 02:40:17,720 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2024-08-02 02:40:20,056 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2024-08-02 02:40:22,496 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2024-08-02 02:40:25,274 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2024-08-02 02:40:28,385 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2024-08-02 02:40:31,572 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2024-08-02 02:40:35,052 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2024-08-02 02:40:38,346 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2024-08-02 02:40:41,758 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2024-08-02 02:41:38,200 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2024-08-02 02:41:40,536 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2024-08-02 02:41:42,855 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2024-08-02 02:41:45,410 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2024-08-02 02:41:48,058 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2024-08-02 02:41:51,142 WARN [main] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-1, groupId=community-consumer-group] Connection to node -1 could not be established. Broker may not be available.
+2024-08-02 02:47:38,013 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator [ConsumerCoordinator.java:737] [Consumer clientId=consumer-6, groupId=community-consumer-group] Asynchronous auto-commit of offsets {publish-0=OffsetAndMetadata{offset=0, metadata=''}} failed: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing the session timeout or by reducing the maximum size of batches returned in poll() with max.poll.records.
+2024-08-02 02:47:38,013 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator [ConsumerCoordinator.java:759] [Consumer clientId=consumer-6, groupId=community-consumer-group] Synchronous auto-commit of offsets {publish-0=OffsetAndMetadata{offset=0, metadata=''}} failed: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing the session timeout or by reducing the maximum size of batches returned in poll() with max.poll.records.
+2024-08-02 02:47:38,253 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator [ConsumerCoordinator.java:737] [Consumer clientId=consumer-4, groupId=community-consumer-group] Asynchronous auto-commit of offsets {comment-0=OffsetAndMetadata{offset=0, metadata=''}, like-0=OffsetAndMetadata{offset=0, metadata=''}, follow-0=OffsetAndMetadata{offset=0, metadata=''}} failed: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing the session timeout or by reducing the maximum size of batches returned in poll() with max.poll.records.
+2024-08-02 02:47:38,253 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator [ConsumerCoordinator.java:759] [Consumer clientId=consumer-4, groupId=community-consumer-group] Synchronous auto-commit of offsets {comment-0=OffsetAndMetadata{offset=0, metadata=''}, like-0=OffsetAndMetadata{offset=0, metadata=''}, follow-0=OffsetAndMetadata{offset=0, metadata=''}} failed: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing the session timeout or by reducing the maximum size of batches returned in poll() with max.poll.records.
+2024-08-02 02:47:38,428 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.i.ConsumerCoordinator [ConsumerCoordinator.java:737] [Consumer clientId=consumer-2, groupId=community-consumer-group] Asynchronous auto-commit of offsets {share-0=OffsetAndMetadata{offset=0, metadata=''}} failed: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing the session timeout or by reducing the maximum size of batches returned in poll() with max.poll.records.
+2024-08-02 02:47:38,428 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.i.ConsumerCoordinator [ConsumerCoordinator.java:759] [Consumer clientId=consumer-2, groupId=community-consumer-group] Synchronous auto-commit of offsets {share-0=OffsetAndMetadata{offset=0, metadata=''}} failed: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing the session timeout or by reducing the maximum size of batches returned in poll() with max.poll.records.
+2024-08-02 02:50:33,769 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.i.ConsumerCoordinator [ConsumerCoordinator.java:737] [Consumer clientId=consumer-2, groupId=community-consumer-group] Asynchronous auto-commit of offsets {share-0=OffsetAndMetadata{offset=0, metadata=''}} failed: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing the session timeout or by reducing the maximum size of batches returned in poll() with max.poll.records.
+2024-08-02 02:50:33,769 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.i.ConsumerCoordinator [ConsumerCoordinator.java:759] [Consumer clientId=consumer-2, groupId=community-consumer-group] Synchronous auto-commit of offsets {share-0=OffsetAndMetadata{offset=0, metadata=''}} failed: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing the session timeout or by reducing the maximum size of batches returned in poll() with max.poll.records.
+2024-08-02 02:50:33,769 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator [ConsumerCoordinator.java:737] [Consumer clientId=consumer-4, groupId=community-consumer-group] Asynchronous auto-commit of offsets {comment-0=OffsetAndMetadata{offset=0, metadata=''}, like-0=OffsetAndMetadata{offset=0, metadata=''}, follow-0=OffsetAndMetadata{offset=0, metadata=''}} failed: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing the session timeout or by reducing the maximum size of batches returned in poll() with max.poll.records.
+2024-08-02 02:50:33,769 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator [ConsumerCoordinator.java:759] [Consumer clientId=consumer-4, groupId=community-consumer-group] Synchronous auto-commit of offsets {comment-0=OffsetAndMetadata{offset=0, metadata=''}, like-0=OffsetAndMetadata{offset=0, metadata=''}, follow-0=OffsetAndMetadata{offset=0, metadata=''}} failed: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing the session timeout or by reducing the maximum size of batches returned in poll() with max.poll.records.
+2024-08-02 02:50:33,769 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator [ConsumerCoordinator.java:737] [Consumer clientId=consumer-6, groupId=community-consumer-group] Asynchronous auto-commit of offsets {publish-0=OffsetAndMetadata{offset=0, metadata=''}} failed: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing the session timeout or by reducing the maximum size of batches returned in poll() with max.poll.records.
+2024-08-02 02:50:33,769 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator [ConsumerCoordinator.java:759] [Consumer clientId=consumer-6, groupId=community-consumer-group] Synchronous auto-commit of offsets {publish-0=OffsetAndMetadata{offset=0, metadata=''}} failed: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing the session timeout or by reducing the maximum size of batches returned in poll() with max.poll.records.
+2024-08-02 02:52:49,933 WARN [elasticsearch[_client_][transport_client_boss][T#8]] o.e.t.n.Netty4Transport [TcpTransport.java:1055] exception caught on transport layer [NettyTcpChannel{localAddress=/192.168.0.190:9481, remoteAddress=/47.113.222.46:9300}], closing connection
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1125)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:682)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:582)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:536)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:750)
+2024-08-02 02:52:49,933 WARN [elasticsearch[_client_][transport_client_boss][T#3]] o.e.t.n.Netty4Transport [TcpTransport.java:1055] exception caught on transport layer [NettyTcpChannel{localAddress=/192.168.0.190:9476, remoteAddress=/47.113.222.46:9300}], closing connection
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1125)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:682)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:582)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:536)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:750)
+2024-08-02 02:52:49,933 WARN [elasticsearch[_client_][transport_client_boss][T#5]] o.e.t.n.Netty4Transport [TcpTransport.java:1055] exception caught on transport layer [NettyTcpChannel{localAddress=/192.168.0.190:9478, remoteAddress=/47.113.222.46:9300}], closing connection
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1125)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:682)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:582)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:536)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:750)
+2024-08-02 02:52:49,933 WARN [elasticsearch[_client_][transport_client_boss][T#14]] o.e.t.n.Netty4Transport [TcpTransport.java:1055] exception caught on transport layer [NettyTcpChannel{localAddress=/192.168.0.190:9487, remoteAddress=/47.113.222.46:9300}], closing connection
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1125)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:682)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:582)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:536)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:750)
+2024-08-02 02:52:49,933 WARN [elasticsearch[_client_][transport_client_boss][T#4]] o.e.t.n.Netty4Transport [TcpTransport.java:1055] exception caught on transport layer [NettyTcpChannel{localAddress=/192.168.0.190:9477, remoteAddress=/47.113.222.46:9300}], closing connection
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1125)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:682)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:582)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:536)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:750)
+2024-08-02 02:52:49,933 WARN [elasticsearch[_client_][transport_client_boss][T#6]] o.e.t.n.Netty4Transport [TcpTransport.java:1055] exception caught on transport layer [NettyTcpChannel{localAddress=/192.168.0.190:9479, remoteAddress=/47.113.222.46:9300}], closing connection
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1125)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:682)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:582)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:536)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:750)
+2024-08-02 02:52:49,933 WARN [elasticsearch[_client_][transport_client_boss][T#13]] o.e.t.n.Netty4Transport [TcpTransport.java:1055] exception caught on transport layer [NettyTcpChannel{localAddress=/192.168.0.190:9486, remoteAddress=/47.113.222.46:9300}], closing connection
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1125)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:682)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:582)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:536)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:750)
+2024-08-02 02:52:49,933 WARN [elasticsearch[_client_][transport_client_boss][T#9]] o.e.t.n.Netty4Transport [TcpTransport.java:1055] exception caught on transport layer [NettyTcpChannel{localAddress=/192.168.0.190:9482, remoteAddress=/47.113.222.46:9300}], closing connection
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1125)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:682)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:582)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:536)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:750)
+2024-08-02 02:52:49,933 WARN [elasticsearch[_client_][transport_client_boss][T#7]] o.e.t.n.Netty4Transport [TcpTransport.java:1055] exception caught on transport layer [NettyTcpChannel{localAddress=/192.168.0.190:9480, remoteAddress=/47.113.222.46:9300}], closing connection
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1125)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:682)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:582)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:536)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:750)
+2024-08-02 02:53:39,548 WARN [elasticsearch[_client_][transport_client_boss][T#3]] o.e.t.n.Netty4Transport [TcpTransport.java:1055] exception caught on transport layer [NettyTcpChannel{localAddress=/192.168.0.190:11921, remoteAddress=/47.113.222.46:9300}], closing connection
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1125)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:682)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:582)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:536)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:750)
+2024-08-02 02:53:39,548 WARN [elasticsearch[_client_][transport_client_boss][T#24]] o.e.t.n.Netty4Transport [TcpTransport.java:1055] exception caught on transport layer [NettyTcpChannel{localAddress=/192.168.0.190:11917, remoteAddress=/47.113.222.46:9300}], closing connection
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1125)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:682)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:582)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:536)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:750)
+2024-08-02 02:53:39,548 WARN [elasticsearch[_client_][transport_client_boss][T#2]] o.e.t.n.Netty4Transport [TcpTransport.java:1055] exception caught on transport layer [NettyTcpChannel{localAddress=/192.168.0.190:11920, remoteAddress=/47.113.222.46:9300}], closing connection
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1125)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:682)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:582)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:536)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:750)
+2024-08-02 02:53:39,548 WARN [elasticsearch[_client_][transport_client_boss][T#4]] o.e.t.n.Netty4Transport [TcpTransport.java:1055] exception caught on transport layer [NettyTcpChannel{localAddress=/192.168.0.190:11922, remoteAddress=/47.113.222.46:9300}], closing connection
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1125)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:682)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:582)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:536)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:750)
+2024-08-02 02:53:39,548 WARN [elasticsearch[_client_][transport_client_boss][T#5]] o.e.t.n.Netty4Transport [TcpTransport.java:1055] exception caught on transport layer [NettyTcpChannel{localAddress=/192.168.0.190:11923, remoteAddress=/47.113.222.46:9300}], closing connection
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1125)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:682)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:582)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:536)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:750)
+2024-08-02 02:53:39,548 WARN [elasticsearch[_client_][transport_client_boss][T#6]] o.e.t.n.Netty4Transport [TcpTransport.java:1055] exception caught on transport layer [NettyTcpChannel{localAddress=/192.168.0.190:11924, remoteAddress=/47.113.222.46:9300}], closing connection
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1125)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:682)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:582)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:536)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:750)
+2024-08-02 02:53:39,548 WARN [elasticsearch[_client_][transport_client_boss][T#23]] o.e.t.n.Netty4Transport [TcpTransport.java:1055] exception caught on transport layer [NettyTcpChannel{localAddress=/192.168.0.190:11918, remoteAddress=/47.113.222.46:9300}], closing connection
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1125)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:682)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:582)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:536)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:750)
+2024-08-02 02:53:39,548 WARN [elasticsearch[_client_][transport_client_boss][T#22]] o.e.t.n.Netty4Transport [TcpTransport.java:1055] exception caught on transport layer [NettyTcpChannel{localAddress=/192.168.0.190:11916, remoteAddress=/47.113.222.46:9300}], closing connection
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1125)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:682)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:582)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:536)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:750)
+2024-08-02 02:53:39,548 WARN [elasticsearch[_client_][transport_client_boss][T#8]] o.e.t.n.Netty4Transport [TcpTransport.java:1055] exception caught on transport layer [NettyTcpChannel{localAddress=/192.168.0.190:11926, remoteAddress=/47.113.222.46:9300}], closing connection
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1125)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:682)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:582)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:536)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:750)
+2024-08-02 02:53:39,548 WARN [elasticsearch[_client_][transport_client_boss][T#1]] o.e.t.n.Netty4Transport [TcpTransport.java:1055] exception caught on transport layer [NettyTcpChannel{localAddress=/192.168.0.190:11919, remoteAddress=/47.113.222.46:9300}], closing connection
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1125)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:682)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:582)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:536)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:750)
+2024-08-02 02:53:39,548 WARN [elasticsearch[_client_][transport_client_boss][T#7]] o.e.t.n.Netty4Transport [TcpTransport.java:1055] exception caught on transport layer [NettyTcpChannel{localAddress=/192.168.0.190:11925, remoteAddress=/47.113.222.46:9300}], closing connection
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1125)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:682)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:582)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:536)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:750)
+2024-08-02 02:53:39,548 WARN [elasticsearch[_client_][transport_client_boss][T#9]] o.e.t.n.Netty4Transport [TcpTransport.java:1055] exception caught on transport layer [NettyTcpChannel{localAddress=/192.168.0.190:11927, remoteAddress=/47.113.222.46:9300}], closing connection
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1125)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:682)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:582)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:536)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:750)
+2024-08-02 02:53:39,548 WARN [elasticsearch[_client_][transport_client_boss][T#21]] o.e.t.n.Netty4Transport [TcpTransport.java:1055] exception caught on transport layer [NettyTcpChannel{localAddress=/192.168.0.190:11915, remoteAddress=/47.113.222.46:9300}], closing connection
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1125)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:347)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:682)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:582)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:536)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.lang.Thread.run(Thread.java:750)
+2024-08-02 02:53:39,548 WARN [kafka-coordinator-heartbeat-thread | community-consumer-group] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-4, groupId=community-consumer-group] Connection to node 2147483647 could not be established. Broker may not be available.
+2024-08-02 02:53:39,548 WARN [kafka-coordinator-heartbeat-thread | community-consumer-group] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 2147483647 could not be established. Broker may not be available.
+2024-08-02 02:53:39,548 WARN [kafka-coordinator-heartbeat-thread | community-consumer-group] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-6, groupId=community-consumer-group] Connection to node 2147483647 could not be established. Broker may not be available.
+2024-08-02 02:53:39,629 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-4, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
+2024-08-02 02:53:39,629 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
+2024-08-02 02:53:39,639 WARN [kafka-coordinator-heartbeat-thread | community-consumer-group] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-6, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
+2024-08-02 02:53:39,670 WARN [lettuce-nioEventLoop-4-2] i.l.c.p.ConnectionWatchdog [Netty4InternalESLogger.java:149] Cannot reconnect: io.netty.channel.AbstractChannel$AnnotatedSocketException: Network is unreachable: no further information: /47.113.222.46:6379
+io.netty.channel.AbstractChannel$AnnotatedSocketException: Network is unreachable: no further information: /47.113.222.46:6379
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:716)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:327)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:340)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:670)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysPlain(NioEventLoop.java:582)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:536)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:906)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.net.SocketException: Network is unreachable: no further information
+	... 12 common frames omitted
+2024-08-02 02:53:39,747 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
+2024-08-02 02:53:39,747 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-6, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
+2024-08-02 02:53:39,747 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-4, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
+2024-08-02 02:53:39,921 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-4, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
+2024-08-02 02:53:39,973 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
+2024-08-02 02:53:39,973 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-6, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
+2024-08-02 02:53:40,421 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-4, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
+2024-08-02 02:53:40,421 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-6, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
+2024-08-02 02:53:40,421 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.NetworkClient [NetworkClient.java:671] [Consumer clientId=consumer-2, groupId=community-consumer-group] Connection to node 0 could not be established. Broker may not be available.
+2024-08-02 02:53:41,380 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.i.ConsumerCoordinator [ConsumerCoordinator.java:737] [Consumer clientId=consumer-2, groupId=community-consumer-group] Asynchronous auto-commit of offsets {publish-0=OffsetAndMetadata{offset=0, metadata=''}} failed: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing the session timeout or by reducing the maximum size of batches returned in poll() with max.poll.records.
+2024-08-02 02:53:41,380 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.i.ConsumerCoordinator [ConsumerCoordinator.java:759] [Consumer clientId=consumer-2, groupId=community-consumer-group] Synchronous auto-commit of offsets {publish-0=OffsetAndMetadata{offset=0, metadata=''}} failed: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing the session timeout or by reducing the maximum size of batches returned in poll() with max.poll.records.
+2024-08-02 02:53:41,441 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator [ConsumerCoordinator.java:737] [Consumer clientId=consumer-4, groupId=community-consumer-group] Asynchronous auto-commit of offsets {share-0=OffsetAndMetadata{offset=0, metadata=''}} failed: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing the session timeout or by reducing the maximum size of batches returned in poll() with max.poll.records.
+2024-08-02 02:53:41,441 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator [ConsumerCoordinator.java:759] [Consumer clientId=consumer-4, groupId=community-consumer-group] Synchronous auto-commit of offsets {share-0=OffsetAndMetadata{offset=0, metadata=''}} failed: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing the session timeout or by reducing the maximum size of batches returned in poll() with max.poll.records.
+2024-08-02 02:53:41,602 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator [ConsumerCoordinator.java:737] [Consumer clientId=consumer-6, groupId=community-consumer-group] Asynchronous auto-commit of offsets {comment-0=OffsetAndMetadata{offset=0, metadata=''}, like-0=OffsetAndMetadata{offset=0, metadata=''}, follow-0=OffsetAndMetadata{offset=0, metadata=''}} failed: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing the session timeout or by reducing the maximum size of batches returned in poll() with max.poll.records.
+2024-08-02 02:53:41,602 WARN [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator [ConsumerCoordinator.java:759] [Consumer clientId=consumer-6, groupId=community-consumer-group] Synchronous auto-commit of offsets {comment-0=OffsetAndMetadata{offset=0, metadata=''}, like-0=OffsetAndMetadata{offset=0, metadata=''}, follow-0=OffsetAndMetadata{offset=0, metadata=''}} failed: Commit cannot be completed since the group has already rebalanced and assigned the partitions to another member. This means that the time between subsequent calls to poll() was longer than the configured max.poll.interval.ms, which typically implies that the poll loop is spending too much time message processing. You can address this either by increasing the session timeout or by reducing the maximum size of batches returned in poll() with max.poll.records.
+2024-08-02 03:06:52,939 WARN [http-nio-8081-exec-1] o.s.w.s.m.s.DefaultHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:198] Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required int parameter 'discussPostId' is not present]
+2024-08-02 03:07:29,281 WARN [http-nio-8081-exec-5] o.s.w.s.m.s.DefaultHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:198] Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required int parameter 'discussPostId' is not present]

@@ -70,6 +70,15 @@ public class EventConsumer implements CommunityConstant {
     @Autowired
     private ThreadPoolTaskScheduler taskScheduler;
 
+    /**
+     * @MethodName: handleCommentMessage
+     * @Description: 消费评论,关注,点赞事件
+     * @param record
+     * @return: void
+     * @throws:
+     * @author: Joking7
+     * @Date: 2024/8/2 上午2:26
+     */
     @KafkaListener(topics = {TOPIC_COMMENT, TOPIC_FOLLOW, TOPIC_LIKE})
     public void handleCommentMessage(ConsumerRecord record) {
         if (record == null || record.value() == null) {
@@ -105,7 +114,15 @@ public class EventConsumer implements CommunityConstant {
         messageService.addMessage(message);
     }
 
-    // 消费发帖事件
+    /**
+     * @MethodName: handlePublishMessage
+     * @Description: 消费发帖事件
+     * @param record
+     * @return: void
+     * @throws:
+     * @author: Joking7
+     * @Date: 2024/8/2 上午2:27
+     */
     @KafkaListener(topics = {TOPIC_PUBLISH})
     public void handlePublishMessage(ConsumerRecord record) {
         if (record == null || record.value() == null) {
@@ -120,7 +137,15 @@ public class EventConsumer implements CommunityConstant {
         elasticsearchService.saveDiscussPost(post);
     }
 
-    // 消费分享事件
+    /**
+     * @MethodName: handleShareMessage
+     * @Description: 消费分享事件
+     * @param record
+     * @return: void
+     * @throws:
+     * @author: Joking7
+     * @Date: 2024/8/2 上午2:27
+     */
     @KafkaListener(topics = TOPIC_SHARE)
     public void handleShareMessage(ConsumerRecord record) {
         if (record == null || record.value() == null) {

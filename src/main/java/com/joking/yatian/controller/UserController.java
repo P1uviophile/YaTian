@@ -34,6 +34,7 @@ import java.util.Date;
  * @description: 用户Controller
  * @date 2024/7/31 下午2:03
  */
+@CrossOrigin
 @RestController
 @RequestMapping("/user")
 public class UserController implements CommunityConstant {
