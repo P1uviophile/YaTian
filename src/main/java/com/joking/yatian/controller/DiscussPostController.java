@@ -210,9 +210,7 @@ public class DiscussPostController implements CommunityConstant {
     public JSONObject setTop(@RequestParam("discussPostId") int id) {
         discussPostService.updateType(id, 1);
 
-        // 先删除es中索引
-        elasticsearchService.deleteDiscussPost(id);
-        // 触发发帖事件 (新增es索引)
+        // 触发发帖事件
         Event event = new Event()
                 .setTopic(TOPIC_PUBLISH)
                 .setUserId(0)
@@ -237,9 +235,7 @@ public class DiscussPostController implements CommunityConstant {
     public JSONObject setWonderful(@RequestParam("discussPostId")int id) {
         discussPostService.updateStatus(id, 1);
 
-        // 先删除es中索引
-        elasticsearchService.deleteDiscussPost(id);
-        // 触发发帖事件 (新增es索引)
+        // 触发发帖事件
         Event event = new Event()
                 .setTopic(TOPIC_PUBLISH)
                 .setUserId(0)
