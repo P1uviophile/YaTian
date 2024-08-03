@@ -1,39 +1,37 @@
 package com.joking.yatian.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.joking.yatian.entity.*;
+import com.joking.yatian.entity.Event;
 import com.joking.yatian.event.EventProducer;
-import com.joking.yatian.service.*;
-import com.joking.yatian.util.*;
-import com.qiniu.common.QiniuException;
-import com.qiniu.http.Response;
-import com.qiniu.storage.Configuration;
-import com.qiniu.storage.UploadManager;
-import com.qiniu.util.Auth;
+import com.joking.yatian.util.CommunityConstant;
+import com.joking.yatian.util.CommunityUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Joking7
- * @ClassName testController
- * @description: TODO
- * @date 2024/7/25 上午1:57
+ * @ClassName ShareController
+ * @description: 分享 Controller
+ * @date 2024/8/3 下午10:30
  */
 @RestController
-public class testController implements CommunityConstant {
+public class ShareController implements CommunityConstant {
+
+    private static final Logger logger = LoggerFactory.getLogger(ShareController.class);
+
     @Autowired
     private EventProducer eventProducer;
 
     @Value("${qiniu.bucket.share.url}")
     private String shareBucketUrl;
 
-    @RequestMapping(path = "/test", method = RequestMethod.GET)
+    @RequestMapping(path = "/share", method = RequestMethod.GET)
     public JSONObject share(@RequestParam("htmlUrl") String htmlUrl) {
         // 文件名
         String fileName = CommunityUtil.generateUUID();

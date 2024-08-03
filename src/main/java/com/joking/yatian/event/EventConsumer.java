@@ -240,10 +240,8 @@ public class EventConsumer implements CommunityConstant {
                         future.cancel(true);
                     }
                 } catch (QiniuException e) {
-                    System.err.println(e.code());
-                    System.err.println(e.toString());
-                    System.err.println(e.url());
-                    System.err.println(e.error());
+                    logger.error("QiniuException: "+ e.code());
+                    logger.error(e.toString());
                     logger.info(String.format("第%d次上传失败[%s].", uploadTimes, fileName));
                 }
             } else {
