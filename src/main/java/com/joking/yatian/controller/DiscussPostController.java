@@ -97,7 +97,9 @@ public class DiscussPostController implements CommunityConstant {
      * @Date: 2024/8/2 上午1:56
      */
     @RequestMapping(path = "/detail/{discussPostId}", method = RequestMethod.GET)
-    public JSONObject getDiscussPost(@PathVariable("discussPostId") int discussPostId,@RequestHeader("userToken") String token) {
+    public JSONObject getDiscussPost(@PathVariable("discussPostId") int discussPostId,
+                                     @RequestHeader("userToken") String token,
+                                     @RequestParam("pageCurrent") int pageCurrent) {
         JSONObject response = CommunityUtil.getJSONString(200);
         // 帖子
         DiscussPost post = discussPostService.findDiscussPostById(discussPostId);
@@ -128,6 +130,7 @@ public class DiscussPostController implements CommunityConstant {
 
         Page page = new Page();
         // 评论分页信息
+        page.setCurrent(pageCurrent);
         page.setLimit(5);
         page.setPath("/discuss/detail/" + discussPostId);
         page.setRows(post.getCommentCount());

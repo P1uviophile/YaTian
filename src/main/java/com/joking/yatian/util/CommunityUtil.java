@@ -1,6 +1,7 @@
 package com.joking.yatian.util;
 
 import com.alibaba.fastjson.JSONObject;
+import com.joking.yatian.entity.User;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.DigestUtils;
 
@@ -14,7 +15,6 @@ import java.util.UUID;
  * @version 2024/07/18 
 **/
 public class CommunityUtil {
-
     // 生成随机字符串
     public static String generateUUID() {
         return UUID.randomUUID().toString().replaceAll("-", "");

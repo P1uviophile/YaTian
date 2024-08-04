@@ -40,10 +40,14 @@ public class HomeController implements CommunityConstant {
 
 
     @RequestMapping(path = {"/index","/"}, method = RequestMethod.GET)
-    public JSONObject getIndexPage(@RequestParam(name = "orderMode", defaultValue = "1") int orderMode) {
+    public JSONObject getIndexPage(@RequestParam(name = "orderMode", defaultValue = "1") int orderMode,
+                                   @RequestParam("pageCurrent") int pageCurrent,
+                                   @RequestParam("pageLimit") int pageLimit) {
         // 方法调用前,SpringMVC会自动实例化Model和Page,并将Page注入Model.
         // 所以,在thymeleaf中可以直接访问Page对象中的数据.
         Page page = new Page();
+        page.setLimit(pageLimit);
+        page.setCurrent(pageCurrent);
         page.setRows(discussPostService.findDiscussPostRows(0));
         page.setPath("/index?orderMode=" + orderMode);
         List<DiscussPost> list = discussPostService.findDiscussPosts(0, page.getOffset(), page.getLimit(),orderMode);
