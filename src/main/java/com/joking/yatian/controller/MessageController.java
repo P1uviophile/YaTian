@@ -36,7 +36,16 @@ public class MessageController implements CommunityConstant {
     @Autowired
     private JwtUtil jwtUtil;
 
-    // 私信列表
+    /**
+     * @MethodName: getLetterList
+     * @Description: 私信列表
+     * @param pageCurrent
+     * @param token
+     * @return: JSONObject
+     * @throws:
+     * @author: Joking7
+     * @Date: 2024/8/5 下午8:18
+     */
     @RequestMapping(path = "/letter/list", method = RequestMethod.GET)
     public JSONObject getLetterList(@RequestParam("pageCurrent")int pageCurrent,
                                 @RequestHeader("userToken") String token) {
@@ -172,6 +181,17 @@ public class MessageController implements CommunityConstant {
         return ids;
     }
 
+    /**
+     * @MethodName: sendLetter
+     * @Description: 发送私信
+     * @param toName
+     * @param content
+     * @param token
+     * @return: JSONObject
+     * @throws:
+     * @author: Joking7
+     * @Date: 2024/8/5 下午8:18
+     */
     @RequestMapping(path = "/letter/send", method = RequestMethod.POST)
     public JSONObject sendLetter(@RequestParam("toName") String toName,
                                  @RequestParam("content") String content,
@@ -197,7 +217,15 @@ public class MessageController implements CommunityConstant {
         return CommunityUtil.getJSONString(200,"发送成功!");
     }
 
-    // 通知列表,指系统发送的通知
+    /**
+     * @MethodName: getNoticeList
+     * @Description: 通知列表,指系统发送的通知
+     * @param token
+     * @return: JSONObject
+     * @throws:
+     * @author: Joking7
+     * @Date: 2024/8/5 下午8:17
+     */
     @RequestMapping(path = "/notice/list", method = RequestMethod.GET)
     public JSONObject getNoticeList(@RequestHeader("userToken") String token) {
         User user = userService.findUserById(Integer.parseInt(jwtUtil.parseToken(token).get("userId")));
@@ -291,6 +319,17 @@ public class MessageController implements CommunityConstant {
         return response;
     }
 
+    /**
+     * @MethodName: getNoticeDetail
+     * @Description: 通知 详情
+     * @param topic
+     * @param pageCurrent
+     * @param token
+     * @return: JSONObject
+     * @throws:
+     * @author: Joking7
+     * @Date: 2024/8/5 下午8:18
+     */
     @RequestMapping(path = "/notice/detail/{topic}", method = RequestMethod.GET)
     public JSONObject getNoticeDetail(@PathVariable("topic") String topic,
                                       @RequestParam("pageCurrent") int pageCurrent,

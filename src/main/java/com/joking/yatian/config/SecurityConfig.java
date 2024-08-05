@@ -50,26 +50,31 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements Comm
                         "/unfollow"
                 )
                 .hasAnyAuthority(
+                        // 已登录用户 包括被封禁账号
                         AUTHORITY_USER,
                         AUTHORITY_ADMIN,
-                        AUTHORITY_MODERATOR
+                        AUTHORITY_MODERATOR,
+                        AUTHORITY_FROZEN
                 )
                 .antMatchers(
                         "/discuss/top",
-                        "/discuss/wonderful"
+                        "/discuss/wonderful",
+                        "/discuss/deleteByAdmin"
                 )
                 .hasAnyAuthority(
-                        AUTHORITY_MODERATOR
+                        // 管理员和版主
+                        AUTHORITY_MODERATOR,
+                        AUTHORITY_ADMIN
                 )
                 .antMatchers(
-                        "/discuss/delete",
-                        "/data/**",
-                        "/actuator/**"
+
                 )
                 .hasAnyAuthority(
                         AUTHORITY_ADMIN
+                ).antMatchers(
+                        // 允许所有人访问
                 )
-                .anyRequest().permitAll()
+                .permitAll()
                 .and().csrf().disable();
 
         // 权限不够时的处理

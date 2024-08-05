@@ -31,6 +31,15 @@ public class ShareController implements CommunityConstant {
     @Value("${qiniu.bucket.share.url}")
     private String shareBucketUrl;
 
+    /**
+     * @MethodName: share
+     * @Description: 生成分享长图 返回图片url
+     * @param htmlUrl
+     * @return: JSONObject
+     * @throws:
+     * @author: Joking7
+     * @Date: 2024/8/5 下午8:19
+     */
     @RequestMapping(path = "/share", method = RequestMethod.GET)
     public JSONObject share(@RequestParam("htmlUrl") String htmlUrl) {
         // 文件名

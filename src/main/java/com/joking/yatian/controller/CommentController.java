@@ -40,6 +40,17 @@ public class CommentController implements CommunityConstant {
     @Autowired
     private JwtUtil jwtUtil;
 
+    /**
+     * @MethodName: addComment
+     * @Description: 发布贴子
+     * @param discussPostId
+     * @param content
+     * @param userToken
+     * @return: JSONObject
+     * @throws:
+     * @author: Joking7
+     * @Date: 2024/8/5 下午8:20
+     */
     @RequestMapping(path = "/add/{discussPostId}", method = RequestMethod.POST)
     public JSONObject addComment(@PathVariable("discussPostId") int discussPostId,
                                  @RequestParam("comment") String content, @RequestHeader("userToken") String userToken) {

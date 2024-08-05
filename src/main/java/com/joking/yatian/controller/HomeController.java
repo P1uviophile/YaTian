@@ -39,6 +39,17 @@ public class HomeController implements CommunityConstant {
     private LikeService likeService;
 
 
+    /**
+     * @MethodName: getIndexPage
+     * @Description: 获取主页信息
+     * @param orderMode
+     * @param pageCurrent
+     * @param pageLimit
+     * @return: JSONObject
+     * @throws:
+     * @author: Joking7
+     * @Date: 2024/8/5 下午8:20
+     */
     @RequestMapping(path = {"/index","/"}, method = RequestMethod.GET)
     public JSONObject getIndexPage(@RequestParam(name = "orderMode", defaultValue = "1") int orderMode,
                                    @RequestParam("pageCurrent") int pageCurrent,

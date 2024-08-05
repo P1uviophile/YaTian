@@ -40,6 +40,20 @@ public class LikeController implements CommunityConstant {
 
     @Autowired
     private JwtUtil jwtUtil;
+
+    /**
+     * @MethodName: like
+     * @Description: 给实体点赞
+     * @param entityType
+     * @param entityId
+     * @param entityUserId
+     * @param postId
+     * @param userToken
+     * @return: JSONObject
+     * @throws:
+     * @author: Joking7
+     * @Date: 2024/8/5 下午8:19
+     */
     @RequestMapping(path = "/like", method = RequestMethod.POST)
     public JSONObject like(@RequestParam("entityType") int entityType,@RequestParam("entityType") int entityId,
                            @RequestParam("entityType")int entityUserId,@RequestParam("entityType") int postId,
