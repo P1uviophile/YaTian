@@ -21,6 +21,7 @@ import java.util.Map;
  * @description: 点赞 Controller
  * @date 2024/8/3 下午10:30
  */
+@CrossOrigin
 @RestController
 public class LikeController implements CommunityConstant {
 

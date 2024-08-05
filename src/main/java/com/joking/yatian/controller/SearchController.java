@@ -9,10 +9,7 @@ import com.joking.yatian.service.UserService;
 import com.joking.yatian.util.CommunityUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,6 +22,7 @@ import java.util.Map;
  * @description: 站内搜索Controller
  * @date 2024/8/3 下午10:31
  */
+@CrossOrigin
 @RestController
 public class SearchController {
 

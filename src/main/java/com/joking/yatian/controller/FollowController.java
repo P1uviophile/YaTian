@@ -23,6 +23,7 @@ import java.util.Map;
  * @description: 关注 Controller层
  * @date 2024/8/3 下午10:30
  */
+@CrossOrigin
 @RestController
 public class FollowController implements CommunityConstant {
 

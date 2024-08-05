@@ -20,6 +20,7 @@ import java.util.Map;
  * @description: 分享 Controller
  * @date 2024/8/3 下午10:30
  */
+@CrossOrigin
 @RestController
 public class ShareController implements CommunityConstant {
 

@@ -21,6 +21,7 @@ import java.util.*;
  * @description: 消息 Controller
  * @date 2024/8/3 下午10:31
  */
+@CrossOrigin
 @RestController
 public class MessageController implements CommunityConstant {
 
