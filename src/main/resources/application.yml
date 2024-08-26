@@ -5,16 +5,16 @@ spring:
   # 连接MySQL
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/yatian?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://your_ip:3306/yatian?useUnicode=true&characterEncoding=UTF-8
     username: root
-    password: jk18889903808
+    password: your_password
 
   # Spring Mail 邮箱相关配置
   mail:
     host: smtp.qq.com
     port: 465
-    username: 2083717185@qq.com
-    password: udkxrbsqvmgwdifg
+    username: yourMail@xx.com
+    password: yourPassword
     protocol: smtp
     properties:
       mail:
@@ -26,11 +26,11 @@ spring:
   data:
     elasticsearch:
       cluster-name: elasticsearch
-      cluster-nodes: 47.113.222.46:9300
+      cluster-nodes: your_ip:9300
 
   # KafkaProperties
   kafka:
-    bootstrap-servers: 47.113.222.46:9092
+    bootstrap-servers: your_ip:9092
     consumer:
       group-id: community-consumer-group
       enable-auto-commit: true
@@ -38,7 +38,7 @@ spring:
 
   # redis
   redis:
-    host: 47.113.222.46
+    host: your_ip
     port: 6379
     # password: jk18889903808
 
@@ -47,7 +47,7 @@ spring:
 token:
   # JWT私钥
   privateKey: 'fdasfgdsagaxgsregdfdjyghjfhebfdgwe45ygrfbsdfshfdsag'
-  # token生成时间超过yangToken变oldToken 访问刷新 (后期为了用户被盗号后必须更新token可能会废用
+  # token生成时间超过yangToken变oldToken 
   yangToken: 10000000
   # token过期时长 一秒=1000
   oldToken: 43200000
@@ -89,8 +89,8 @@ wk:
 # qiniu
 qiniu:
   key:
-    access: zGvmrQUw250mt5AgPShm1izDKll9o4b-tG_nnY38
-    secret: Vnc3HSTuvPmwGZb0bRPbnn1CSMmr0UYeRwjoESfK
+    access: xx
+    secret: xx
   bucket:
     header:
       name: yatian-pic-header
