@@ -40,7 +40,6 @@ spring:
   redis:
     host: your_ip
     port: 6379
-    # password: jk18889903808
 
 
 # JWT
