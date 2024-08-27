@@ -42,7 +42,7 @@ public class CommentController implements CommunityConstant {
 
     /**
      * @MethodName: addComment
-     * @Description: 发布贴子
+     * @Description: 发布评论
      * @param discussPostId
      * @param content
      * @param userToken

@@ -2,12 +2,16 @@
 
 spring:
 
+  # security优先级设置
+  security:
+    filter:
+      order: -100
   # 连接MySQL
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/yatian?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://47.113.222.46:3306/yatian?useUnicode=true&characterEncoding=UTF-8
     username: root
-    password: jk18889903808
+    password: Jk#020034
 
   # Spring Mail 邮箱相关配置
   mail:
@@ -48,15 +52,17 @@ token:
   # JWT私钥
   privateKey: 'fdasfgdsagaxgsregdfdjyghjfhebfdgwe45ygrfbsdfshfdsag'
   # token生成时间超过yangToken变oldToken 访问刷新 (后期为了用户被盗号后必须更新token可能会废用
-  yangToken: 10000000
+  # 一小时
+  yangToken: 3600000
+  # 六小时
   # token过期时长 一秒=1000
-  oldToken: 43200000
+  oldToken: 21600000
 
 community:
   path:
     # 开发用
-    domain: http://localhost:8081
-    domain_vue: http://localhost:5173
+    domain: http://localhost:8088
+    domain_vue: yatian.joing7.com
     # upload: J:/javaProject/data/upload
 
 # Mybatis
@@ -69,7 +75,8 @@ mybatis:
 
 # ServerProperties
 server:
-  port: 8081
+  # 端口
+  port: 8088
   servlet:
     context-path:
 
@@ -83,8 +90,8 @@ caffeine:
 # 配置wkhtmltoimage
 wk:
   image:
-    command: D:\\codeRelated\\wkhtml\\wkhtmltopdf\\bin\\wkhtmltoimage.exe
-    storage: D:/codeData/wkhtmltoimage
+    command: wkhtmltoimage
+    storage: ./wkimage/data
 
 # qiniu
 qiniu:

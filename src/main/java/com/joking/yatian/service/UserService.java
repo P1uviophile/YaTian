@@ -127,7 +127,10 @@ public class UserService implements CommunityConstant {
         list.add(new GrantedAuthority() {
             @Override
             public String getAuthority() {
+                if(user==null) {return AUTHORITY_FROZEN;}
                 switch (user.getType()) {
+                    case 0:
+                        return AUTHORITY_USER;
                     case 1:
                         return AUTHORITY_ADMIN;
                     case 2:
@@ -135,7 +138,7 @@ public class UserService implements CommunityConstant {
                     case -1:
                         return AUTHORITY_FROZEN;
                     default:
-                        return AUTHORITY_USER;
+                        return AUTHORITY_FROZEN;
                 }
             }
         });

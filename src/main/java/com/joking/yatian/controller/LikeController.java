@@ -56,8 +56,8 @@ public class LikeController implements CommunityConstant {
      * @Date: 2024/8/5 下午8:19
      */
     @RequestMapping(path = "/like", method = RequestMethod.POST)
-    public JSONObject like(@RequestParam("entityType") int entityType,@RequestParam("entityType") int entityId,
-                           @RequestParam("entityType")int entityUserId,@RequestParam("entityType") int postId,
+    public JSONObject like(@RequestParam("entityType") int entityType,@RequestParam("entityId") int entityId,
+                           @RequestParam("entityUserId")int entityUserId,@RequestParam("postId") int postId,
                            @RequestHeader("userToken") String userToken) {
         User user = userService.findUserById(Integer.parseInt(jwtUtil.parseToken(userToken).get("userId")));
         //点赞

@@ -117,7 +117,7 @@ public class UserController implements CommunityConstant {
      * @author: Joking7
      * @Date: 2024/7/31 下午9:38
      */
-    @PostMapping(path = "password/update")
+    @PostMapping(path = "/password/update")
     public JSONObject updatePassword(@RequestHeader("userToken") String token, @RequestParam("oldPassword") String oldPassword, @RequestParam("newPassword") String newPassword) {
         User user = userService.findUserById(Integer.parseInt(jwtUtil.parseToken(token).get("userId")));
         if(userService.updatePassword(user.getId(),newPassword,oldPassword)!=-1) {

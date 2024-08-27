@@ -155,6 +155,8 @@
         </pluginRepository>
     </pluginRepositories>
 
+    <packaging>jar</packaging>
+
    <build>
        <plugins>
            <plugin>

@@ -52,4 +52,19 @@ public class testController implements CommunityConstant {
 
         return response;
     }
+
+    @RequestMapping(path = "/test2", method = RequestMethod.GET)
+    public JSONObject test2() {
+        return CommunityUtil.getJSONString(200,"ceshi2");
+    }
+
+    @RequestMapping(path = "/test3", method = RequestMethod.GET)
+    public JSONObject test3() {
+        return CommunityUtil.getJSONString(200,"ceshi3");
+    }
+
+    @RequestMapping(path = "/test1", method = RequestMethod.GET)
+    public JSONObject test1() {
+        return CommunityUtil.getJSONString(200,"ceshi1");
+    }
 }
