@@ -41,7 +41,7 @@ public class ShareController implements CommunityConstant {
      * @author: Joking7
      * @Date: 2024/8/5 下午8:19
      */
-    @RequestMapping(path = "/share", method = RequestMethod.GET)
+    @RequestMapping(path = "/share", method = RequestMethod.POST)
     public JSONObject share(@RequestParam("htmlUrl") String htmlUrl) {
         // 文件名
         String fileName = CommunityUtil.generateUUID();

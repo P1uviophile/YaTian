@@ -98,7 +98,7 @@ public class UserController implements CommunityConstant {
      * @author: Joking7
      * @Date: 2024/7/31 下午9:33
      */
-    @PostMapping(path = "/username/update")
+    @RequestMapping(path = "/username/update",method = RequestMethod.PUT)
     public JSONObject updateUser(@RequestHeader("userToken") String token, @RequestParam("newName") String newName) {
         User user = userService.findUserById(Integer.parseInt(jwtUtil.parseToken(token).get("userId")));
         if(userService.updateName(user.getId(),newName)!=-1) {
@@ -117,7 +117,7 @@ public class UserController implements CommunityConstant {
      * @author: Joking7
      * @Date: 2024/7/31 下午9:38
      */
-    @PostMapping(path = "/password/update")
+    @RequestMapping(path = "/password/update",method = RequestMethod.PUT)
     public JSONObject updatePassword(@RequestHeader("userToken") String token, @RequestParam("oldPassword") String oldPassword, @RequestParam("newPassword") String newPassword) {
         User user = userService.findUserById(Integer.parseInt(jwtUtil.parseToken(token).get("userId")));
         if(userService.updatePassword(user.getId(),newPassword,oldPassword)!=-1) {
@@ -135,7 +135,7 @@ public class UserController implements CommunityConstant {
      * @author: Joking7
      * @Date: 2024/7/31 下午2:51
      */
-    @RequestMapping(path = "/header/update", method = RequestMethod.POST)
+    @RequestMapping(path = "/header/update", method = RequestMethod.PUT)
     public JSONObject updateHeaderUrl(@RequestParam("file") MultipartFile file, @RequestHeader("userToken") String token) {
         int userId = Integer.parseInt(jwtUtil.parseToken(token).get("userId"));
         User user = userService.findUserById(userId);

@@ -30,9 +30,6 @@ public class FollowController implements CommunityConstant {
     @Autowired
     private FollowService followService;
 
-    //@Autowired
-    //private HostHolder hostHolder;
-
     @Autowired
     private UserService userService;
 
@@ -50,7 +47,7 @@ public class FollowController implements CommunityConstant {
      * @param entityId
      * @param token
      * @return: JSONObject
-     * @throws: 
+     * @throws:
      * @author: Joking7
      * @Date: 2024/8/4 下午9:25
      */
@@ -80,11 +77,11 @@ public class FollowController implements CommunityConstant {
      * @param entityId
      * @param token
      * @return: JSONObject
-     * @throws: 
+     * @throws:
      * @author: Joking7
      * @Date: 2024/8/4 下午9:26
      */
-    @RequestMapping(path = "/unfollow", method = RequestMethod.POST)
+    @RequestMapping(path = "/unfollow", method = RequestMethod.DELETE)
     public JSONObject unfollow(@RequestParam("entityType") int entityType,
                                @RequestParam("entityId") int entityId,
                                @RequestHeader("userToken") String token) {
@@ -101,7 +98,7 @@ public class FollowController implements CommunityConstant {
      * @param userId
      * @param pageCurrent
      * @return: JSONObject
-     * @throws: 
+     * @throws:
      * @author: Joking7
      * @Date: 2024/8/4 下午9:26
      */
@@ -113,7 +110,7 @@ public class FollowController implements CommunityConstant {
             return CommunityUtil.getJSONString(404,"该用户不存在!");
         }
         //model.addAttribute("user", user);
-        
+
         Page page = new Page();
         page.setCurrent(pageCurrent);
         page.setLimit(5);
@@ -128,7 +125,7 @@ public class FollowController implements CommunityConstant {
             }
         }
         //model.addAttribute("users", userList);
-        
+
         JSONObject response = CommunityUtil.getJSONString(200);
         response.put("page", page);
         response.put("users", userList);
@@ -154,7 +151,7 @@ public class FollowController implements CommunityConstant {
             return CommunityUtil.getJSONString(404,"该用户不存在!");
         }
         //model.addAttribute("user", user);
-        
+
         Page page = new Page();
         page.setCurrent(pageCurrent);
         page.setLimit(5);

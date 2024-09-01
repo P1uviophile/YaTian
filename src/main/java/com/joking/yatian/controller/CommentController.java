@@ -51,7 +51,7 @@ public class CommentController implements CommunityConstant {
      * @author: Joking7
      * @Date: 2024/8/5 下午8:20
      */
-    @RequestMapping(path = "/add/{discussPostId}", method = RequestMethod.POST)
+    @RequestMapping(path = "/{discussPostId}", method = RequestMethod.POST)
     public JSONObject addComment(@PathVariable("discussPostId") int discussPostId,
                                  @RequestParam("comment") String content, @RequestHeader("userToken") String userToken) {
 

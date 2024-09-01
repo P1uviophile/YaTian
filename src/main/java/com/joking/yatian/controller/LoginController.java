@@ -64,7 +64,7 @@ public class LoginController implements CommunityConstant {
      * @throws
      *
     **/
-    @PostMapping(path = "/register")
+    @RequestMapping(path = "/register",method = RequestMethod.POST)
     public JSONObject register(@RequestParam("username") String username, @RequestParam("password") String password,@RequestParam("email") String email) {
         User user = new User();
         user.setUsername(username);
@@ -90,8 +90,8 @@ public class LoginController implements CommunityConstant {
      * @throws
      *
     **/
-    @RequestMapping(path = "/activation")
-    public JSONObject activation(@RequestParam("userId") int userId, @RequestParam("code") String code) {
+    @RequestMapping(path = "/activation/{userId}",method = RequestMethod.PUT)
+    public JSONObject activation(@PathVariable("userId") int userId, @RequestParam("code") String code) {
         int result = userService.activation(userId, code);
         //没查到user的逻辑
         if(result==403){
@@ -117,7 +117,7 @@ public class LoginController implements CommunityConstant {
      * @throws
      *
     **/
-    @GetMapping(path = "/getKaptcha")
+    @RequestMapping(path = "/getKaptcha",method = RequestMethod.GET)
     public JSONObject getKaptcha() {
         JSONObject comResponse = new JSONObject();
         // 生成验证码
@@ -160,8 +160,8 @@ public class LoginController implements CommunityConstant {
      * @throws
      *
     **/
-    @PostMapping(path = "/login")
-    public JSONObject userLogin(@RequestParam("username") String username, @RequestParam("password") String password,
+    @RequestMapping(path = "/login/{username}",method = RequestMethod.GET)
+    public JSONObject userLogin(@PathVariable("username") String username, @RequestParam("password") String password,
                             @RequestParam("kaptchaText") String kaptchaText, @RequestParam("kaptchaKey") String kaptchaKey) {
         JSONObject response;
         String getKaptchaKey = (String) redisTemplate.opsForValue().get(kaptchaKey);

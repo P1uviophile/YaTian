@@ -56,7 +56,7 @@ public class DiscussPostController implements CommunityConstant {
      * @author: Joking7
      * @Date: 2024/8/2 上午1:49
      */
-    @RequestMapping(path = "/add", method = RequestMethod.POST)
+    @RequestMapping(path = "", method = RequestMethod.POST)
     public JSONObject addDiscussPost(@RequestHeader("userToken") String token, @RequestParam("title") String title, @RequestParam("content") String content) {
         User user = userService.findUserById(Integer.parseInt(jwtUtil.parseToken(token).get("userId")));
         if (user == null) {
@@ -96,7 +96,7 @@ public class DiscussPostController implements CommunityConstant {
      * @author: Joking7
      * @Date: 2024/8/2 上午1:56
      */
-    @RequestMapping(path = "/detail/{discussPostId}", method = RequestMethod.GET)
+    @RequestMapping(path = "/{discussPostId}", method = RequestMethod.GET)
     public JSONObject getDiscussPost(@PathVariable("discussPostId") int discussPostId,
                                      @RequestHeader("userToken") String token,
                                      @RequestParam("pageCurrent") int pageCurrent) {
@@ -208,9 +208,8 @@ public class DiscussPostController implements CommunityConstant {
      * @author: Joking7
      * @Date: 2024/8/2 上午2:11
      */
-    // TODO SpringBoot Security 设置管理员权限
-    @RequestMapping(path = "/top", method = RequestMethod.POST)
-    public JSONObject setTop(@RequestParam("discussPostId") int id) {
+    @RequestMapping(path = "/top/{discussPostId}", method = RequestMethod.PUT)
+    public JSONObject setTop(@PathVariable("discussPostId") int id) {
         discussPostService.updateType(id, 1);
 
         // 触发发帖事件
@@ -233,9 +232,8 @@ public class DiscussPostController implements CommunityConstant {
      * @author: Joking7
      * @Date: 2024/8/2 上午2:11
      */
-    // TODO SpringBoot Security 设置管理员权限
-    @RequestMapping(path = "/wonderful", method = RequestMethod.POST)
-    public JSONObject setWonderful(@RequestParam("discussPostId")int id) {
+    @RequestMapping(path = "/wonderful/{discussPostId}", method = RequestMethod.PUT)
+    public JSONObject setWonderful(@PathVariable("discussPostId")int id) {
         discussPostService.updateStatus(id, 1);
 
         // 触发发帖事件
@@ -262,9 +260,8 @@ public class DiscussPostController implements CommunityConstant {
      * @author: Joking7
      * @Date: 2024/8/2 上午2:12
      */
-    // TODO : SpringBoot Security 设置管理员权限
-    @RequestMapping(path = "/deleteByAdmin", method = RequestMethod.POST)
-    public JSONObject setDeleteByAdmin(@RequestParam("discussPostId")int id) {
+    @RequestMapping(path = "/admin/{discussPostId}", method = RequestMethod.DELETE)
+    public JSONObject setDeleteByAdmin(@PathVariable("discussPostId")int id) {
         discussPostService.updateStatus(id, 2);
 
         // 触发删帖事件 (现在不需要消息队列推送)
@@ -292,8 +289,8 @@ public class DiscussPostController implements CommunityConstant {
      * @author: Joking7
      * @Date: 2024/8/2 上午2:12
      */
-    @RequestMapping(path = "/delete", method = RequestMethod.POST)
-    public JSONObject setDelete(@RequestParam("discussPostId")int id,@RequestHeader("userToken") String token) {
+    @RequestMapping(path = "/{discussPostId}", method = RequestMethod.DELETE)
+    public JSONObject setDelete(@PathVariable("discussPostId")int id,@RequestHeader("userToken") String token) {
 
         // 未登录
         if(token==null) return CommunityUtil.getJSONString(401,"无权限");

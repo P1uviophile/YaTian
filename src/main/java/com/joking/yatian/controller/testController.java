@@ -33,6 +33,15 @@ public class testController implements CommunityConstant {
     @Value("${qiniu.bucket.share.url}")
     private String shareBucketUrl;
 
+    @Autowired
+    private DiscussPostService discussPostService;
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private LikeService likeService;
+
     @RequestMapping(path = "/test", method = RequestMethod.GET)
     public JSONObject share(@RequestParam("htmlUrl") String htmlUrl) {
         // 文件名
@@ -64,7 +73,16 @@ public class testController implements CommunityConstant {
     }
 
     @RequestMapping(path = "/test1", method = RequestMethod.GET)
-    public JSONObject test1() {
-        return CommunityUtil.getJSONString(200,"ceshi1");
+    public int getIndexPage(@RequestParam(name = "orderMode", defaultValue = "1") int orderMode,
+                                   @RequestParam("pageCurrent") int pageCurrent,
+                                   @RequestParam("pageLimit") int pageLimit) {
+        // 方法调用前,SpringMVC会自动实例化Model和Page,并将Page注入Model.
+        // 所以,在thymeleaf中可以直接访问Page对象中的数据.
+        List<DiscussPost> discussPosts = discussPostService.findDiscussPosts(0, 0, 5,orderMode);
+
+        //model.addAttribute("discussPosts", discussPosts);
+        //model.addAttribute("orderMode", orderMode);
+
+        return 1;
     }
 }
